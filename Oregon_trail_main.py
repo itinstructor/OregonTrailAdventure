@@ -33,84 +33,89 @@ def main_game():
     #The loop will always run up unless player health were to ever hit zero, then the loop breaks
     while True:
 
-
-
         #Create object
-        player = Game()
+        game = Game()
 
-
-
+        #----------------------------------------------------------------------
 
 
         #Arturo's stop
-        player.health_lost = player.arturo_stop()
+        game.health_lost = game.arturo_stop()
 
         #Subtract health from the amount of health lost during room
-        health = player.subract_health()
+        game.subract_health()
 
         #Check health and end game if the player has no health
-        check = player.check_health()
+        check = game.check_health()
 
         if check == 0:
-            player.game_over()
+            game.game_over()
             break
 
+        #----------------------------------------------------------------------
         
-
         #Aiden's stop
-        player.health_lost =  player.aiden_stop()
+        game.health_lost =  game.aiden_stop()
 
         #Subtract health from the amount of health lost during room
-        player.subract_health()
+        game.subract_health()
 
         #Check health and end game if the player has no health
-        check = player.check_health()
+        check = game.check_health()
 
         if check == 0:
-            player.game_over()
+            game.game_over()
             break
+
+        #----------------------------------------------------------------------
 
 
         #Gus' stop
-        player.health_lost = player.gus_stop()
+        game.health_lost = game.gus_stop()
 
         #Subtract health from the amount of health lost during room
-        player.subract_health()
+        game.subract_health()
 
         #Check health and end game if the player has no health
-        check = player.check_health()
+        check = game.check_health()
 
         if check == 0:
-            player.game_over()
+            game.game_over()
             break
+
+        #----------------------------------------------------------------------
         
 
         #Josiah's stop
-        player.health_lost = player.josiah_stop()
+        game.health_lost = game.josiah_stop()
 
         #Subtract health from the amount of health lost during room
-        player.subract_health()
+        game.subract_health()
 
         #Check health and end game if the player has no health
-        check = player.check_health()
+        check = game.check_health()
 
         if check == 0:
-            player.game_over()
+            game.game_over()
             break
+
+        #----------------------------------------------------------------------
 
 
         #Yonaton's stop
-        player.health_lost = player.yonaton_stop()
+        game.health_lost = game.yonaton_stop()
 
         #Subtract health from the amount of health lost during room
-        player.subract_health()
+        game.subract_health()
 
         #Check health and end game if the player has no health
-        check = player.check_health()
+        check = game.check_health()
 
         if check == 0:
-            player.game_over()
+            game.game_over()
             break
+        
+        #----------------------------------------------------------------------
 
 
 
@@ -121,9 +126,10 @@ def main_game():
         break
 
 
-    
 
-        
+
+
+
 #Make object
 class Game():
 
@@ -144,8 +150,9 @@ class Game():
     #Through the room (Goes through the method), the program will check if the user's health is above 0 or not
     #If user health is not greater than 0, program ends.
 
-    #So the
+    #TL:DR is to return the amount of health the player lost in the room
     #---------------------------------------------------------------------------------------------------------
+
     #Stop 1
     def arturo_stop(self):
         pass
@@ -204,9 +211,12 @@ class Game():
 
 
     #---------------------------------------------------CALCULATIONS--------------------------------------------------
-    #These will end up going into a different file, since this file will just be for displaying.
-    #Calculations like subtracting and checking health
+    #These will end up going into a different file since this file will just be for displaying.
+    #Calculations like subtracting and checking health (later on, there might be more in here and could be a file
+    # that is imported into other files to make calculations. For example, resting would add health and would be
+    # another calculation)
     #-----------------------------------------------------------------------------------------------------------------
+
     def subract_health(self,):
         self._health = self._health - self._health_lost
 
