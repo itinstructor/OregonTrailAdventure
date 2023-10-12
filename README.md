@@ -7,6 +7,7 @@ Collaborators:
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
 4. Josiah Andrews (siahdrews)
+5. Braxton RIder (SirRexOfRider)
 
 # Plan of Attack
 Certainly, let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. We'll create a basic structure with a `main.py` as the menu system and six separate class files for different stops along the way. Here's an overview:
