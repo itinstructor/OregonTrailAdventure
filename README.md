@@ -1,13 +1,13 @@
 # OregonTrailGPT
 Practice GitHub using ChatGPT and shared coding
 
-Gus Allred is here.
 Collaborators:
 1. Aidan Newberry (regtoga)
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
 4. Josiah Andrews (siahdrews)
 5. Braxton RIder (SirRexOfRider)
+6. Gus Allred (itsjustmegus)
 
 # Story
 Imagine you're going on a long adventure, like a big trip. In this game, you need to be healthy and travel a long distance. You start with 100 points of health. The goal is to travel 1000 miles without losing all your health.
