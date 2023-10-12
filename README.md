@@ -8,6 +8,21 @@ Collaborators:
 3. Yonatan Getachew (Yogetachew)
 4. Josiah Andrews (siahdrews)
 
+# Story
+Imagine you're going on a long adventure, like a big trip. In this game, you need to be healthy and travel a long distance. You start with 100 points of health. The goal is to travel 1000 miles without losing all your health.
+
+You have three things you can do:
+
+1. **Continue on your journey**: This means you keep going forward on your adventure. Sometimes, you'll travel a little, but it might make you a bit less healthy.
+
+2. **Rest**: This is like taking a break. It helps you feel better and become healthier.
+
+3. **Quit**: If you want to stop the game, you can choose to quit.
+
+Your job is to make choices and try to travel the whole 1000 miles without running out of health. If you run out of health, you lose the game. If you make it to 1000 miles with some health left, you win!
+
+So, just remember, keep an eye on your health, make choices, and try to go on this adventure as far as you can. Good luck!
+
 # Plan of Attack
 Certainly, let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. We'll create a basic structure with a `main.py` as the menu system and six separate class files for different stops along the way. Here's an overview:
 
