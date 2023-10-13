@@ -85,10 +85,13 @@ class FinalDestinationRoom(Room):
         exit()
 
 
-if __name__ == "__main__":
-    player = Player()
-    current_room = StartRoom(player)
+player = Player()
+current_room = StartRoom(player)
 
+print("Welcome to the Oregon Trail Adventure!")
+while not player.is_game_over():
+    current_room.describe()
+    current_room = current_room.handle_input()
     print("Welcome to the Oregon Trail Adventure!")
     while not player.is_game_over():
         current_room.describe()
