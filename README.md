@@ -1,7 +1,7 @@
 # OregonTrailGPT
 Practice GitHub using ChatGPT and shared coding
 
-Collaborators:
+# Collaborators:
 1. Aidan Newberry (regtoga)
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
@@ -25,7 +25,7 @@ Your job is to make choices and try to travel the whole 1000 miles without runni
 So, just remember, keep an eye on your health, make choices, and try to go on this adventure as far as you can. Good luck!
 
 # Plan of Attack
-Certainly, let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. We'll create a basic structure with a `main.py` as the menu system and six separate class files for different stops along the way. Here's an overview:
+Let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
 1. Create a folder for your project and place the following Python files inside it:
 
