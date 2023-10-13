@@ -1,7 +1,6 @@
 # La Aventura del Sendero de Oregon (The Oregon Trail Adventurs)
 
-Practice GitHub project using ChatGPT and shared coding for Intro to Computer Science Fa23.
-
+A practice GitHub project using ChatGPT and shared coding adventure for Intro to Computer Science Fa23.
 
 # Collaborators:
 1. Aidan Newberry (regtoga)
@@ -10,6 +9,8 @@ Practice GitHub project using ChatGPT and shared coding for Intro to Computer Sc
 4. Josiah Andrews (siahdrews)
 5. Braxton RIder (SirRexOfRider)
 6. Gus Allred (itsjustmegus)
+
+# Videos
 
 # Story
 
