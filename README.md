@@ -1,6 +1,6 @@
 # La Aventura del Sendero de Oregon (The Oregon Trail Adventurs)
 
-Practice GitHub project using ChatGPT and shared coding for Intro to Computer Science.
+Practice GitHub project using ChatGPT and shared coding for Intro to Computer Science Fa23.
 
 
 # Collaborators:
@@ -12,6 +12,7 @@ Practice GitHub project using ChatGPT and shared coding for Intro to Computer Sc
 6. Gus Allred (itsjustmegus)
 
 # Story
+
 "The Oregon Trail Adventure" is a text-based, strategy-driven game where you, as a pioneer, embark on a perilous journey along the historic Oregon Trail in the year 1848. Your choices will determine the fate of your party as you face challenges such as river crossings, mountain passes, and resource management. Navigate wisely to reach the fertile lands of Oregon and fulfill your dreams of a new life in the American West.
 
 To play "The Oregon Trail Adventure," follow these steps:
@@ -35,14 +36,14 @@ To play "The Oregon Trail Adventure," follow these steps:
 
 8. Navigate the trail successfully to achieve your dreams in the American West.
 
-Remember, keep an eye on your health, make choices, and travel to Oregon. Good luck!
+Remember, keep an eye on your health, make good choices, and travel successfully to Oregon City. Good luck!
 
 # Plan of Attack
 Let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
 1. Create a folder for your project and place the following Python files inside it:
 
-   - `main.py` (for the game menu)
+   - `main_menu.py` (for the game menu)
    - `start.py` (the starting location)
    - `river.py` (river crossing location)
    - `desert.py` (desert location)
@@ -50,7 +51,7 @@ Let's create a simple text-based "Oregon Trail" game in Python with a command-li
    - `mountains.py` (mountains location)
    - `end.py` (ending location)
 
-2. Here's a simplified structure for `main.py`:
+2. Here's a simplified structure for `main_menu.py`:
 
 ```python
 class OregonTrailGame:
@@ -96,6 +97,6 @@ class StartLocation:
 
 5. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
 
-6. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
+6. Once you've created all location classes and connected them through the game menu in `main_menu.py`, players can navigate through the game by making choices and progressing through the locations.
 
-This is a basic outline for your Oregon Trail game in Python. You can expand and customize it by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
+You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
