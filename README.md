@@ -1,5 +1,7 @@
-# OregonTrailGPT
-Practice GitHub using ChatGPT and shared coding
+# La Aventura del Sendero de Oregon (The Oregon Trail Adventurs)
+
+Practice GitHub project using ChatGPT and shared coding for Intro to Computer Science.
+
 
 # Collaborators:
 1. Aidan Newberry (regtoga)
@@ -10,19 +12,30 @@ Practice GitHub using ChatGPT and shared coding
 6. Gus Allred (itsjustmegus)
 
 # Story
-Imagine you're going on a long adventure, like a big trip. In this game, you need to be healthy and travel a long distance. You start with 100 points of health. The goal is to travel 1000 miles without losing all your health.
+"The Oregon Trail Adventure" is a text-based, strategy-driven game where you, as a pioneer, embark on a perilous journey along the historic Oregon Trail in the year 1848. Your choices will determine the fate of your party as you face challenges such as river crossings, mountain passes, and resource management. Navigate wisely to reach the fertile lands of Oregon and fulfill your dreams of a new life in the American West.
 
-You have three things you can do:
+To play "The Oregon Trail Adventure," follow these steps:
 
-1. **Continue on your journey**: This means you keep going forward on your adventure. Sometimes, you'll travel a little, but it might make you a bit less healthy.
+1. Start the game and enter your name to begin your journey as a pioneer.
 
-2. **Rest**: This is like taking a break. It helps you feel better and become healthier.
+2. Use the main menu to make choices:
+   - "Travel to the next stop" to continue your journey.
+   - "Check player status" to monitor your health, food, and money.
+   - "Quit" to exit the game.
 
-3. **Quit**: If you want to stop the game, you can choose to quit.
+3. During your journey, you'll encounter various stops, each with its own challenges.
 
-Your job is to make choices and try to travel the whole 1000 miles without running out of health. If you run out of health, you lose the game. If you make it to 1000 miles with some health left, you win!
+4. Make decisions at each stop, such as fording rivers or searching for resources.
 
-So, just remember, keep an eye on your health, make choices, and try to go on this adventure as far as you can. Good luck!
+5. Manage your resources wisely, including food and money, to ensure your party's survival.
+
+6. Progress on the trail, and your choices will shape the outcome of your adventure.
+
+7. Your goal is to reach the Willamette Valley in Oregon, so plan your moves carefully.
+
+8. Navigate the trail successfully to achieve your dreams in the American West.
+
+Remember, keep an eye on your health, make choices, and travel to Oregon. Good luck!
 
 # Plan of Attack
 Let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
