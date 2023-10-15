@@ -1,4 +1,4 @@
-# La Aventura del Sendero de Oregon (The Oregon Trail Adventurs)
+# La Aventura del Sendero de Oregon (The Oregon Trail Adventure)
 
 A practice GitHub project using ChatGPT and shared coding adventure for Intro to Computer Science Fa23.
 
@@ -7,7 +7,7 @@ A practice GitHub project using ChatGPT and shared coding adventure for Intro to
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
 4. Josiah Andrews (siahdrews)
-5. Braxton RIder (SirRexOfRider)
+5. Braxton Rider (SirRexOfRider)
 6. Gus Allred (itsjustmegus)
 
 # Videos
