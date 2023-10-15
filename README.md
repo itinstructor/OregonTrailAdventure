@@ -50,55 +50,14 @@ Let's create a simple text-based "Oregon Trail" game in Python with a command-li
    - `desert.py` (desert location)
    - `forest.py` (forest location)
    - `mountains.py` (mountains location)
+   - Add other locations
    - `end.py` (ending location)
 
-2. Here's a simplified structure for `main_menu.py`:
+3. Continue this structure for the river, desert, forest, mountains, and end locations, each offering different choices and consequences.
 
-```python
-class OregonTrailGame:
-    def __init__(self):
-        self.current_location = None
+4. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
 
-    def start_game(self):
-        print("Welcome to the Oregon Trail!")
-        self.current_location = StartLocation(self)
-
-    def change_location(self, new_location):
-        self.current_location = new_location
-        self.current_location.enter()
-
-if __name__ == "__main__":
-    game = OregonTrailGame()
-    game.start_game()
-```
-
-3. For the class files (e.g., `start.py`), you can structure them like this:
-
-```python
-class StartLocation:
-    def __init__(self, game):
-        self.game = game
-
-    def enter(self):
-        print("You are at the starting point of your journey.")
-
-        while True:
-            choice = input("What would you like to do? (1. Continue, 2. Quit): ")
-            if choice == '1':
-                self.game.change_location(RiverLocation(self.game))
-            elif choice == '2':
-                self.game.change_location(EndLocation(self.game))
-            else:
-                print("Invalid choice. Please enter 1 or 2.")
-
-# Repeat a similar structure for other location classes.
-```
-
-4. Continue this structure for the river, desert, forest, mountains, and end locations, each offering different choices and consequences.
-
-5. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
-
-6. Once you've created all location classes and connected them through the game menu in `main_menu.py`, players can navigate through the game by making choices and progressing through the locations.
+5. Once you've created all location classes and connected them through the game menu in `main_menu.py`, players can navigate through the game by making choices and progressing through the locations.
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 
