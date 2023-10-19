@@ -1,3 +1,11 @@
+"""
+    Name: Player Class
+    File: player.py
+    Version: 1
+    Description: Player class to store attributes and methods for the player
+"""
+
+
 class Player:
     def __init__(self, name):
         """
@@ -19,6 +27,7 @@ class Player:
         self.inventory = {'food': 100, 'money': 500}
         self.distance_traveled = 0
 
+# ------------------------ TAKE DAMAGE ------------------------------------#
     def take_damage(self, damage):
         """
         Reduce the player's health by a specified amount.
@@ -32,12 +41,14 @@ class Player:
         """
         self.health -= damage
 
+# ------------------------ HAS FOOD ---------------------------------------#
     def has_food(self, amount):
         """
         Check if the player has enough food in their inventory.
 
         Parameters:
-            amount (int): The amount of food to check for in the player's inventory.
+            amount (int): Amount of food to check for in the
+            player's inventory.
 
         Return:
             True if the player has enough food, False otherwise.
@@ -45,11 +56,13 @@ class Player:
         """
         return self.inventory.get('food', 0) >= amount
 
+# ------------------------ CONSUME FOOD -----------------------------------#
     def consume_food(self, amount):
         """
         Consumes the specified amount of food from the player's inventory.
 
-        If the player has enough food, the specified amount is subtracted from the food inventory.
+        If the player has enough food,
+        the specified amount is subtracted from the food inventory.
         If there is not enough food, the player's health is reduced by 10.
 
         Args:
@@ -88,6 +101,7 @@ class Player:
             # Lose health if there's not enough food
             self.health -= 10
 
+# ------------------------ SPEND MOINEY -----------------------------------#
     def spend_money(self, amount):
         """
         Subtracts the specified amount from the player's
@@ -121,6 +135,7 @@ class Player:
             # Subtract amount from player's money inventory
             self.inventory['money'] -= amount
 
+# ------------------------ DISPLAY STATUS ----------------------------------#
     def display_status(self):
         """
         Prints the current status of the player.

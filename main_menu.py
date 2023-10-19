@@ -48,8 +48,11 @@ def main_menu():
     """
 
     print("Welcome to the Oregon Trail Adventure!")
-    player_name = input("Enter your name: ")
+
     # Initialize a player object with the player's name
+    # The Player object allows us to keep the player's information
+    # intact as we go from object to object
+    player_name = input("Enter your name: ")
     player = Player(player_name)
 
     while True:

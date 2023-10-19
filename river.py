@@ -1,6 +1,15 @@
+"""
+    Name: River Class
+    File: player.py
+    Version: 1
+    Description: 
+"""
 import random
-from stop import Stop  # Import the common Stop class
-# import player
+# Import the common Stop class
+# enforces inheriting the get_description and interact methods
+from stop import Stop
+
+
 class River(Stop):
     def get_description(self):
         """
@@ -14,6 +23,29 @@ class River(Stop):
         return desc
 
     def interact(self, player):
+        """
+        Allows the player to interact with the river in a text-based game.
+
+        Args:
+            player (object): The player object that interacts with the river.
+
+        Returns:
+            None
+
+        Raises:
+            None
+
+        Example Usage:
+            river = River()
+            player = Player()
+            river.interact(player)
+
+        The code creates an instance of the `River` class
+        and an instance of the `Player` class.
+        It then calls the `interact` method on the `river` object,
+        passing the `player` object as an argument.
+        This allows the player to interact with the river in the game.
+        """
         print(self.get_description())
         menu = "What will you do?\n"
         menu += "1. Attempt to ford the river\n"
@@ -25,10 +57,11 @@ class River(Stop):
             # Implement logic for attempting to ford the river
             print("You attempt to ford the river.")
             # Check if the player successfully fords the river
-            # Example: 50% chance of success
-            if random.random() < 0.5:
+            # Example: 50% chance of success, 0 or 1
+            interaction = random.randint(0, 1)
+            if interaction == 0:
                 print("You successfully ford the river.")
-            else:
+            elif interaction == 1:
                 print("The river is too treacherous, you fail to cross safely.")
                 player.take_damage(10)
 
