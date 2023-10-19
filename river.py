@@ -19,7 +19,8 @@ class River(Stop):
             str: A string describing the river
         """
         desc = "You've reached a fast-flowing river, "
-        desc += "known as the Wild River. It's too deep to ford."
+        desc += "known as the Wild North Platte River. "
+        desc +=  "It's too deep to ford."
         return desc
 
     def interact(self, player):
@@ -46,11 +47,14 @@ class River(Stop):
         passing the `player` object as an argument.
         This allows the player to interact with the river in the game.
         """
+        # Simulated distance traveled
+        player.distance_traveled += 50
         print(self.get_description())
         menu = "What will you do?\n"
         menu += "1. Attempt to ford the river\n"
         menu += "2. Look for a ferry\n"
-        menu += "3. Cancel and return to the main menu\nEnter your choice: "
+        menu += "3. Cancel and return to the main menu"
+        menu += "\nEnter your choice: "
         choice = input(menu)
 
         if choice == '1':

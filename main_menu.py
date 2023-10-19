@@ -7,7 +7,8 @@
 
 # Import the Player class to track the players attributes
 from player import Player
-from river import River  # Import other stop classes similarly
+# Import other stop classes similarly
+from river import River  
 
 
 def main_menu():
@@ -46,7 +47,7 @@ def main_menu():
     Enter your choice: 3
     Thanks for playing. Goodbye!
     """
-
+    # This will be replaced by something
     print("Welcome to the Oregon Trail Adventure!")
 
     # Initialize a player object with the player's name
@@ -63,10 +64,8 @@ def main_menu():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            # Simulated distance traveled
-            player.distance_traveled += 50
             # Replace with logic to determine the current stop
-            current_stop = River("Wild River")
+            current_stop = River("Wild North Platte River")
             # Pass instance of player to current_stop
             current_stop.interact(player)
         elif choice == '2':
