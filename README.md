@@ -40,11 +40,12 @@ To play "The Oregon Trail Adventure," follow these steps:
 Remember, keep an eye on your health, make good choices, and travel successfully to Oregon City. Good luck!
 
 # Plan of Attack
-Let's create a simple text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
+Let's create a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
-1. Create a folder for your project and place the following Python files inside it:
+1. Create a folder for your project and place Python files inside it like this:
 
    - `main_menu.py` (for the game menu)
+   - `main_menu.py` (player class)
    - `start.py` (the starting location)
    - `river.py` (river crossing location)
    - `desert.py` (desert location)

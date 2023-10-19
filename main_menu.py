@@ -8,7 +8,7 @@
 # Import the Player class to track the players attributes
 from player import Player
 # Import other stop classes similarly
-from river import River  
+from river import River
 
 
 def main_menu():
@@ -64,7 +64,12 @@ def main_menu():
         choice = input("Enter your choice: ")
 
         if choice == '1':
-            # Replace with logic to determine the current stop
+            # TODO: Replace with logic to determine the current stop
+            # We want a data structure like a list to store the stops
+            # Easily rearrange and add stops
+            # Go from one stop to the next when the player
+            # leaves the stop class
+            # We don't want the stop hardcoded
             current_stop = River("Wild North Platte River")
             # Pass instance of player to current_stop
             current_stop.interact(player)
