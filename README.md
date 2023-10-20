@@ -2,7 +2,7 @@
 
 A practice GitHub project using ChatGPT and shared coding adventure for Intro to Computer Science Fa23.
 
-# Collaborators:
+## Collaborators:
 1. Aidan Newberry (regtoga)
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
@@ -10,11 +10,11 @@ A practice GitHub project using ChatGPT and shared coding adventure for Intro to
 5. Braxton Rider (SirRexOfRider)
 6. Gus Allred (itsjustmegus)
 
-# Videos
+## Videos
 
  - 10-19 [Video Introduction to project](https://youtu.be/cdG8KzpBkvA)
 
-# Story
+## Story
 
 "The Oregon Trail Adventure" is a text-based, strategy-driven game where you, as a pioneer, embark on a perilous journey along the historic Oregon Trail in the year 1848. Your choices will determine the fate of your party as you face challenges such as river crossings, mountain passes, and resource management. Navigate wisely to reach the fertile lands of Oregon and fulfill your dreams of a new life in the American West.
 
@@ -41,7 +41,7 @@ To play "The Oregon Trail Adventure," follow these steps:
 
 Remember, keep an eye on your health, make good choices, and travel successfully to Oregon City. Good luck!
 
-# Plan of Attack
+## Plan of Attack
 Let's create a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
 1. Create a folder for your project and place Python files inside it like this:
@@ -64,7 +64,7 @@ Let's create a text-based "Oregon Trail" game in Python with a command-line inte
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 
-# Expand the Game Ideas
+## Expand the Game Ideas
 
 1. **Add More Stop Classes:**
    - Create additional stop classes, representing various real-life locations and events along the Oregon Trail. Examples include forts, trading posts, Native American encounters, and more. Each stop should have unique descriptions and interactions.
@@ -106,3 +106,9 @@ You can expand and customize the game by adding more details, challenges, and in
     - Regularly playtest the game and gather feedback from players to fine-tune gameplay, balance, and user experience.
 
 By following these directions, you can expand "The Oregon Trail Adventure" into a more complex and engaging game with diverse gameplay elements and a rich historical context.
+
+### License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/)</a>.
