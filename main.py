@@ -1,6 +1,6 @@
 """
     Name: Oregon Trail Adventure
-    File: main_menu.py
+    File: main.py
     Version: 1
     Description: Main menu for program
 """

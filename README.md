@@ -1,5 +1,7 @@
 # La Aventura del Sendero de Oregon (The Oregon Trail Adventure)
 
+Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
+
 A practice GitHub project using ChatGPT and shared coding adventure for Intro to Computer Science Fa23.
 
 ## Collaborators:
