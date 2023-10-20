@@ -26,6 +26,8 @@ class Player:
         self.health = 100
         self.inventory = {'food': 100, 'money': 500}
         self.distance_traveled = 0
+        # TODO: track which stop the player is at
+        # This will allow us to pickle and unpickle the player's object
 
 # ------------------------ TAKE DAMAGE ------------------------------------#
     def take_damage(self, damage):

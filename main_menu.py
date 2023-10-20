@@ -47,7 +47,7 @@ def main_menu():
     Enter your choice: 3
     Thanks for playing. Goodbye!
     """
-    # This will be replaced by something
+    # This will be replaced by something cool!
     print("Welcome to the Oregon Trail Adventure!")
 
     # Initialize a player object with the player's name
@@ -55,6 +55,10 @@ def main_menu():
     # intact as we go from object to object
     player_name = input("Enter your name: ")
     player = Player(player_name)
+
+    # TODO: Anyone: Pickle and unpickle the player's state
+    # to allow stop and start of play
+    # Keep track of which stop they are on
 
     while True:
         print("\nMain Menu:")
@@ -73,11 +77,14 @@ def main_menu():
             current_stop = River("Wild North Platte River")
             # Pass instance of player to current_stop
             current_stop.interact(player)
+
         elif choice == '2':
             player.display_status()
+
         elif choice == '3':
             print("Thanks for playing. Goodbye!")
             break
+
         else:
             print("Invalid choice. Please try again.")
 

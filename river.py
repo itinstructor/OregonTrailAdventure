@@ -2,7 +2,7 @@
     Name: River Class
     File: player.py
     Version: 1
-    Description: 
+    Description: Crossing the North Platte River
 """
 import random
 # Import the common Stop class
