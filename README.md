@@ -12,6 +12,8 @@ A practice GitHub project using ChatGPT and shared coding adventure for Intro to
 
 # Videos
 
+ - 10-19 [Video Introduction to project](https://youtu.be/cdG8KzpBkvA)
+
 # Story
 
 "The Oregon Trail Adventure" is a text-based, strategy-driven game where you, as a pioneer, embark on a perilous journey along the historic Oregon Trail in the year 1848. Your choices will determine the fate of your party as you face challenges such as river crossings, mountain passes, and resource management. Navigate wisely to reach the fertile lands of Oregon and fulfill your dreams of a new life in the American West.
