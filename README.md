@@ -2,7 +2,7 @@
 
 Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
 
-A practice GitHub project using ChatGPT and shared coding adventure for Intro to Computer Science Fa23.
+A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
 
 ## Collaborators:
 1. Aidan Newberry (regtoga)
