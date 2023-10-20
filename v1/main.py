@@ -8,7 +8,7 @@
 # Import the Player class to track the players attributes
 from player import Player
 # Import other stop classes similarly
-from stops.river import River
+from river import River
 
 
 def main_menu():
