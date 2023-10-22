@@ -75,21 +75,22 @@ Let's create a text-based "Oregon Trail" game in Python with a command-line inte
 
 1. Create a folder for your project and place Python files inside it like this:
 
-   - `main_menu.py` (for the game menu)
-   - `main_menu.py` (player class)
-   - `start.py` (the starting location)
-   - `river.py` (river crossing location)
-   - `desert.py` (desert location)
-   - `forest.py` (forest location)
-   - `mountains.py` (mountains location)
+   - `main.py` (Game menu)
+   - `player.py` (Player class)
+   - `start.py` (Starting location: Independence, Missouri)
+   - `kansas_river.py` (Kansas River Crossing)
+   - `big_blue_river.py` (Big Blue River Crossing)
+   - `fort_kearney.py` (Fort Kearney, NE)
+   - `chimney_rock.py` (Chimney Rock, NE)
+   - `fort_laramie.py` (Fort Laramie, WY)
    - Add other locations
-   - `end.py` (ending location)
+   - `end.py` (Willamette Valley, Oregon)
 
-3. Continue this structure for the river, desert, forest, mountains, and end locations, each offering different choices and consequences.
+2. Continue this structure for other locations, each offering different choices and consequences.
 
-4. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
+3. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
 
-5. Once you've created all location classes and connected them through the game menu in `main_menu.py`, players can navigate through the game by making choices and progressing through the locations.
+4. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 

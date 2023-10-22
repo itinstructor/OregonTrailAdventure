@@ -3,14 +3,22 @@
     File: player.py
     Version: 1
     Description: Crossing the North Platte River
+    This is a template for creating other stops along the oregon trail
 """
 import random
 # Import the common Stop class
 # enforces inheriting the get_description and interact methods
 from stops.stop import Stop
+import stops.ascii_art
+
 
 
 class River(Stop):
+
+    def __init__(self, name):
+        self.name = name
+        print(stops.ascii_art.river)
+        
     def get_description(self):
         """
         Returns a description of the river.
@@ -18,8 +26,9 @@ class River(Stop):
         Returns:
             str: A string describing the river
         """
-        desc = "You've reached a fast-flowing river, "
-        desc += "known as the Wild North Platte River. "
+        desc = self.name
+        desc += "\nYou've reached a fast-flowing river, "
+        desc += "known as the Kansas River. "
         desc +=  "It's too deep to ford."
         return desc
 
@@ -48,7 +57,6 @@ class River(Stop):
         This allows the player to interact with the river in the game.
         """
         # Simulated distance traveled
-        player.distance_traveled += 50
         print(self.get_description())
         menu = "What will you do?\n"
         menu += "1. Attempt to ford the river\n"
@@ -59,14 +67,16 @@ class River(Stop):
 
         if choice == '1':
             # Implement logic for attempting to ford the river
-            print("You attempt to ford the river.")
+            print(" You attempt to ford the river.")
             # Check if the player successfully fords the river
             # Example: 50% chance of success, 0 or 1
             interaction = random.randint(0, 1)
             if interaction == 0:
-                print("You successfully ford the river.")
+                print(" You successfully ford the river.")
+                # Add distance traveled
+                player.add_distance(50)
             elif interaction == 1:
-                print("The river is too treacherous, you fail to cross safely.")
+                print(" The river is too treacherous, you fail to cross safely.")
                 player.take_damage(10)
 
         elif choice == '2':

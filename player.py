@@ -29,6 +29,20 @@ class Player:
         # TODO: track which stop the player is at
         # This will allow us to pickle and unpickle the player's object
 
+# ------------------------ DISTANCE TRAVELED ------------------------------#
+    def add_distance(self, distance):
+        """
+        Reduce the player's health by a specified amount.
+
+        Parameters:
+            damage (int): The amount of damage to be taken by the player.
+
+        Returns:
+            None: The method does not return any value.
+            It only updates the player's health attribute.
+        """
+        self.distance_traveled += distance
+
 # ------------------------ TAKE DAMAGE ------------------------------------#
     def take_damage(self, damage):
         """
@@ -160,8 +174,8 @@ class Player:
         Money: 500
         Distance Traveled: 0 miles
         """
-        print(f"{self.name}'s Status:")
-        print(f"Health: {self.health}")
-        print(f"Food: {self.inventory['food']}")
-        print(f"Money: {self.inventory['money']}")
-        print(f"Distance Traveled: {self.distance_traveled} miles")
+        print(f" --------- {self.name}'s Status --------")
+        print(f"   Health: {self.health}")
+        print(f"     Food: {self.inventory['food']}")
+        print(f"    Money: {self.inventory['money']}")
+        print(f" Distance: {self.distance_traveled} miles")

@@ -8,7 +8,7 @@
 # Import other stop classes similarly
 from rich.prompt import Prompt
 from player import Player
-from stops.river import River
+from stops.kansas_river import River
 
 # Windows: pip install rich
 # Linux: pip3 install rich
@@ -72,9 +72,7 @@ def main_menu():
     # Title Case The Player's Name
     player = Player(player_name.title())
 
-
 # ------------------- MAIN MENU LOOP --------------------------------------#
-
     while True:
         console.print("\n [bold green]Main Menu:[/bold green]")
         print(" 1. Travel to the next stop")
@@ -89,9 +87,11 @@ def main_menu():
             # Go from one stop to the next when the player
             # leaves the stop class
             # We don't want the stop hardcoded
-            current_stop = River("Wild North Platte River")
+            current_stop = River(" Kansas River Crossing")
             # Pass instance of player to current_stop
             current_stop.interact(player)
+            # Display status after stop
+            print(player.display_status())
 
         elif choice == '2':
             player.display_status()
