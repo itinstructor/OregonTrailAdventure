@@ -4,11 +4,20 @@
     Version: 1
     Description: Main menu for program
 """
-
 # Import the Player class to track the players attributes
-from player import Player
 # Import other stop classes similarly
+from rich.prompt import Prompt
+from player import Player
 from stops.river import River
+
+# Windows: pip install rich
+# Linux: pip3 install rich
+# Import Console for console printing
+from rich.console import Console
+# Import Panel for title displays
+from rich.panel import Panel
+# Initialize rich.console
+console = Console()
 
 
 def main_menu():
@@ -48,24 +57,30 @@ def main_menu():
     Thanks for playing. Goodbye!
     """
     # This will be replaced by something cool!
-    print("Welcome to the Oregon Trail Adventure!")
+    console.print(
+        Panel.fit(
+            " Welcome to the Oregon Trail Adventure! ",
+            style="bold blue",
+            subtitle="by Buddy the Cougar")
+    )
 
+# ------------------- GET PLAYER NAME -------------------------------------#
     # Initialize a player object with the player's name
     # The Player object allows us to keep the player's information
-    # intact as we go from object to object
-    player_name = input("Enter your name: ")
-    player = Player(player_name)
+    # intact as we go from stop to stop
+    player_name = Prompt.ask(" [bold green]Enter your name[/bold green]")
+    # Title Case The Player's Name
+    player = Player(player_name.title())
 
-    # TODO: Anyone: Pickle and unpickle the player's state
-    # to allow stop and start of play
-    # Keep track of which stop they are on
+
+# ------------------- MAIN MENU LOOP --------------------------------------#
 
     while True:
-        print("\nMain Menu:")
-        print("1. Travel to the next stop")
-        print("2. Check player status")
-        print("3. Quit")
-        choice = input("Enter your choice: ")
+        console.print("\n [bold green]Main Menu:[/bold green]")
+        print(" 1. Travel to the next stop")
+        print(" 2. Check player status")
+        print(" 3. Quit")
+        choice = input(" Enter your choice: ")
 
         if choice == '1':
             # TODO: Replace with logic to determine the current stop
@@ -82,11 +97,15 @@ def main_menu():
             player.display_status()
 
         elif choice == '3':
-            print("Thanks for playing. Goodbye!")
+            console.print(
+                f" [bold blue]Thanks for playing {player_name}. Goodbye![/bold blue]"
+            )
             break
-
+        # TODO: Anyone: Pickle and unpickle the player's state
+        # to allow stop and start of play
+        # Keep track of which stop they are on
         else:
-            print("Invalid choice. Please try again.")
+            print(" Invalid choice. Please try again.")
 
 
 if __name__ == "__main__":
