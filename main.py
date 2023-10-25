@@ -7,6 +7,7 @@
 # Import the Player class to track the players attributes
 # Import other stop classes similarly
 from rich.prompt import Prompt
+import sys
 from player import Player
 from stops.kansas_river import River
 
@@ -92,6 +93,9 @@ def main_menu():
             current_stop.interact(player)
             # Display status after stop
             print(player.display_status())
+            if player.health <= 0:
+                console.print(f" [bold red]Sorry, you didn't make it. Have a nice funeral.[/bold red]")
+                sys.exit(0)
 
         elif choice == '2':
             player.display_status()

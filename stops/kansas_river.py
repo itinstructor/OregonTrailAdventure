@@ -12,13 +12,12 @@ from stops.stop import Stop
 import stops.ascii_art
 
 
-
 class River(Stop):
 
     def __init__(self, name):
         self.name = name
         print(stops.ascii_art.river)
-        
+
     def get_description(self):
         """
         Returns a description of the river.
@@ -29,7 +28,7 @@ class River(Stop):
         desc = self.name
         desc += "\nYou've reached a fast-flowing river, "
         desc += "known as the Kansas River. "
-        desc +=  "It's too deep to ford."
+        desc += "It's too deep to ford."
         return desc
 
     def interact(self, player):
@@ -65,8 +64,8 @@ class River(Stop):
         menu += "\nEnter your choice: "
         choice = input(menu)
 
-        if choice == '1':
-            # Implement logic for attempting to ford the river
+        if choice == "1":
+            """ Attempt to ford the river """
             print(" You attempt to ford the river.")
             # Check if the player successfully fords the river
             # Example: 50% chance of success, 0 or 1
@@ -79,9 +78,22 @@ class River(Stop):
                 print(" The river is too treacherous, you fail to cross safely.")
                 player.take_damage(10)
 
-        elif choice == '2':
-            # Implement logic for looking for a ferry
+        elif choice == "2":
+            """ Look for a ferry """
             print("You decide to look for a ferry.")
+            # Check if the player successfully fords the river
+            # Example: 50% chance of success, 0 or 1
+            interaction = random.randint(0, 2)
+            if interaction == 0:
+                print(" You found a ferry and crossed the river!")
+                # Add distance traveled
+                player.add_distance(50)
+            elif interaction == 1:
+                print(" You did not find a ferry.")
+                player.take_damage(10)
+            elif interaction == 2:
+                print(" You find a ferry, fall in the river, and die of dysentery.")
+                player.take_damage(100)
 
         elif choice == '3':
             print("You return to the main menu.")
