@@ -89,10 +89,14 @@ def main_menu():
             # leaves the stop class
             # We don't want the stop hardcoded
             current_stop = River(" Kansas River Crossing")
+            
             # Pass instance of player to current_stop
             current_stop.interact(player)
+            
             # Display status after stop
             print(player.display_status())
+            
+            # If a player's health is less than 0, they didn't survive
             if player.health <= 0:
                 console.print(f" [bold red]Sorry, you didn't make it. Have a nice funeral.[/bold red]")
                 sys.exit(0)
@@ -108,6 +112,7 @@ def main_menu():
         # TODO: Anyone: Pickle and unpickle the player's state
         # to allow stop and start of play
         # Keep track of which stop they are on
+        
         else:
             print(" Invalid choice. Please try again.")
 

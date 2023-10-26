@@ -8,8 +8,8 @@
 
 
 class Stop:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, stop_name):
+        self.name = stop_name
 
     def get_description(self):
         pass

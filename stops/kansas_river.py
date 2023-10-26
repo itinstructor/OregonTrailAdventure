@@ -14,8 +14,8 @@ import stops.ascii_art
 
 class River(Stop):
 
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, stop_name):
+        self.stop_name = stop_name
         print(stops.ascii_art.river)
 
     def get_description(self):
@@ -25,7 +25,7 @@ class River(Stop):
         Returns:
             str: A string describing the river
         """
-        desc = self.name
+        desc = self.stop_name
         desc += "\nYou've reached a fast-flowing river, "
         desc += "known as the Kansas River. "
         desc += "It's too deep to ford."
@@ -39,9 +39,6 @@ class River(Stop):
             player (object): The player object that interacts with the river.
 
         Returns:
-            None
-
-        Raises:
             None
 
         Example Usage:
@@ -67,13 +64,16 @@ class River(Stop):
         if choice == "1":
             """ Attempt to ford the river """
             print(" You attempt to ford the river.")
+
             # Check if the player successfully fords the river
             # Example: 50% chance of success, 0 or 1
             interaction = random.randint(0, 1)
+
             if interaction == 0:
                 print(" You successfully ford the river.")
                 # Add distance traveled
                 player.add_distance(50)
+
             elif interaction == 1:
                 print(" The river is too treacherous, you fail to cross safely.")
                 player.take_damage(10)
@@ -81,16 +81,20 @@ class River(Stop):
         elif choice == "2":
             """ Look for a ferry """
             print("You decide to look for a ferry.")
+
             # Check if the player successfully fords the river
             # Example: 50% chance of success, 0 or 1
             interaction = random.randint(0, 2)
+
             if interaction == 0:
                 print(" You found a ferry and crossed the river!")
                 # Add distance traveled
                 player.add_distance(50)
+
             elif interaction == 1:
                 print(" You did not find a ferry.")
                 player.take_damage(10)
+
             elif interaction == 2:
                 print(" You find a ferry, fall in the river, and die of dysentery.")
                 player.take_damage(100)
