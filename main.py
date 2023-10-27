@@ -72,9 +72,12 @@ def main_menu():
     player_name = Prompt.ask(" [bold green]Enter your name[/bold green]")
     # Title Case The Player's Name
     player = Player(player_name.title())
+    # Define the stops along the Oregon Trail
+    stops = [River("Kansas River Crossing")]
 
 # ------------------- MAIN MENU LOOP --------------------------------------#
-    while True:
+    while player.current_stop < len(stops):
+        # while True:
         console.print("\n [bold green]Main Menu:[/bold green]")
         print(" 1. Travel to the next stop")
         print(" 2. Check player status")
@@ -85,21 +88,24 @@ def main_menu():
             # TODO: Replace with logic to determine the current stop
             # We want a data structure like a list to store the stops
             # Easily rearrange and add stops
-            # Go from one stop to the next when the player
-            # leaves the stop class
-            # We don't want the stop hardcoded
-            current_stop = River(" Kansas River Crossing")
-            
+            # Update the current stop
+            current_stop = stops[player._current_stop]
+
+            # current_stop = River(" Kansas River Crossing")
             # Pass instance of player to current_stop
             current_stop.interact(player)
-            
+
             # Display status after stop
             print(player.display_status())
-            
+
             # If a player's health is less than 0, they didn't survive
             if player.health <= 0:
-                console.print(f" [bold red]Sorry, you didn't make it. Have a nice funeral.[/bold red]")
+                console.print(
+                    f" [bold red]Sorry, you didn't make it. Have a nice funeral.[/bold red]")
                 sys.exit(0)
+
+            # Go from one stop to the next when the player
+            player.current_stop += 1  # Move to the next stop
 
         elif choice == '2':
             player.display_status()
@@ -112,9 +118,11 @@ def main_menu():
         # TODO: Anyone: Pickle and unpickle the player's state
         # to allow stop and start of play
         # Keep track of which stop they are on
-        
+
         else:
             print(" Invalid choice. Please try again.")
+
+    print("Bye!")
 
 
 if __name__ == "__main__":

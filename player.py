@@ -26,8 +26,18 @@ class Player:
         self.health = 100
         self.inventory = {'food': 100, 'money': 500}
         self.distance_traveled = 0
-        # TODO: track which stop the player is at
-        # This will allow us to pickle and unpickle the player's object
+        # Track which stop the player is at
+        # Initialize to first stop
+        self._current_stop = 0
+
+# ------------------------ CURRENT STOP -----------------------------------#
+    @property
+    def current_stop(self)->int:
+        return self._current_stop
+    
+    @current_stop.setter
+    def current_stop(self, stop:int):
+        self._current_stop = stop
 
 # ------------------------ DISTANCE TRAVELED ------------------------------#
     def add_distance(self, distance):
