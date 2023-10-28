@@ -62,7 +62,7 @@ def main_menu():
     Enter your choice: 3
     Thanks for playing. Goodbye!
     """
-    # This will be replaced by something cool!
+    
     console.print(
         Panel.fit(
             " Welcome to the Oregon Trail Adventure! ",
@@ -76,19 +76,22 @@ def main_menu():
     # intact as we go from stop to stop
     player_name = Prompt.ask(" [bold green]Enter your name[/bold green]")
 
-    # Create player object
-    # Title Case The Player's Name
+    # Create player object, Title Case The Player's Name
     player = Player(player_name.title())
 
 # ------------------- MAIN MENU LOOP --------------------------------------#
     while player.current_stop < len(STOPS):
+        # While the current_stop number is less than the
+        # number of stops in the stops list
 
         console.print(
-            "\n[bold green]Oregon Trail Adventure Main Menu:[/bold green]"
+            "\n[bold green] -- Oregon Trail Adventure Main Menu --[/bold green]"
         )
+
         print(" 1. Travel to the next stop")
         print(" 2. Check player status")
         print(" 9. Quit")
+
         choice = input(" Enter your choice: ")
 
 # -------------------------- TRAVEL TO NEXT STOP --------------------------#
