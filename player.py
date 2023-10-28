@@ -26,6 +26,7 @@ class Player:
         self.health = 100
         self.inventory = {'food': 100, 'money': 500}
         self.distance_traveled = 0
+        
         # Track which stop the player is at
         # Initialize to first stop
         self._current_stop = 0

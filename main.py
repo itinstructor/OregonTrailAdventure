@@ -91,6 +91,7 @@ def main_menu():
         print(" 9. Quit")
         choice = input(" Enter your choice: ")
 
+# -------------------------- TRAVEL TO NEXT STOP --------------------------#
         if choice == '1':
             # TODO: Replace with logic to determine the current stop
             # We want a data structure like a list to store the stops
@@ -107,33 +108,44 @@ def main_menu():
 
             # If a player's health is less than 0, they didn't survive
             if player.health <= 0:
-                console.print(
-                    f"[bold red]Sorry, you didn't make it. Have a nice funeral.[/bold red]")
+                message = f"[bold red] Sorry {player.name}, "
+                message += "you didn't make it."
+                message += "Have a nice funeral.[/bold red]"
+                console.print(message)
+
+                # Exit the program, the player died
                 sys.exit(0)
 
-            # Go from one stop to the next when the player
-            player.current_stop += 1  # Move to the next stop
+            # Go to the next stop
+            player.current_stop += 1
 
+# -------------------------- DISPLAY STATUS -------------------------------#
         elif choice == '2':
             player.display_status()
 
+# -------------------------- PICKLE PLAYER STATE --------------------------#
         elif choice == '3':
+            # TODO: Anyone: Pickle the player's state
             pass
-            # TODO: Anyone: Pickle and unpickle the player's state
-            # to allow stop and start of play
-            # Keep track of which stop they are on
 
+# -------------------------- UNPICKLE PLAYER STATE ------------------------#
+        elif choice == '4':
+            # TODO: Anyone: Unpickle the player's state
+            pass
+
+# -------------------------- EXIT GAME ------------------------------------#
         elif choice == '9':
-            console.print(
-                f"[bold blue]Thanks for playing {player_name}. Goodbye![/bold blue]"
-            )
+            # Exit the game
+            message = f"[bold blue] Thanks for playing {player_name}. "
+            message += "Goodbye![/bold blue]"
+            console.print(message)
             break
 
         else:
             print(" Invalid choice. Please try again.")
 
         console.print(
-            f"[bold blue] {player_name}, you have successfull traveled the Oregon Trail Adventure . . . Bye!"
+            f"[bold blue] {player_name}, thanks for playing the Oregon Trail Adventure . . . Bye!"
         )
 
 

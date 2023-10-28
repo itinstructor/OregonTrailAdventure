@@ -1,8 +1,8 @@
 """
-    Name: River Class
-    File: player.py
+    Name: Kansas River Class
+    File: kansas_river.py
     Version: 1
-    Description: Crossing the North Platte River
+    Description: Crossing the Kansas River
     This is a template for creating other stops along the oregon trail
 """
 import random
@@ -16,7 +16,6 @@ class River(Stop):
 
     def __init__(self, stop_name):
         self.stop_name = stop_name
-        print(stops.ascii_art.river)
 
     def get_description(self):
         """
@@ -25,7 +24,8 @@ class River(Stop):
         Returns:
             str: A string describing the river
         """
-        desc = self.stop_name
+        desc = stops.ascii_art.river
+        desc += self.stop_name
         desc += "\nYou've reached a fast-flowing river, "
         desc += "known as the Kansas River. "
         desc += "It's too deep to ford."
