@@ -14,7 +14,7 @@ A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
 
 ## Videos
 
-- 10-19 [Video Introduction to project](https://youtu.be/cdG8KzpBkvA)
+- 10-28 [Video of project status and next steps](https://wnccnet-my.sharepoint.com/:v:/g/personal/loringw_wncc_edu/EYDvr5eV3KBNttroWCLrFh0BmoJVTfIkSLCX1YCgAYythA?e=ZRBtMb)
 
 ## Story
 
