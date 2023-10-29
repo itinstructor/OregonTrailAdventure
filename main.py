@@ -77,9 +77,9 @@ def main_menu():
     # The Player object allows us to keep the player's information
     # intact as we go from stop to stop
     player_name = Prompt.ask(" [bold green]Enter your name[/bold green]")
-
+    player_name = player_name.title()
     # Create player object, Title Case The Player's Name
-    player = Player(player_name.title())
+    player = Player(player_name)
 
 # ------------------- MAIN MENU LOOP --------------------------------------#
     while player.current_stop < len(STOPS):
@@ -109,8 +109,7 @@ def main_menu():
             # If a player's health is less than 0, they didn't survive
             if player.health <= 0:
                 message = f"[red] Sorry {player.name}, "
-                message += "you didn't make it."
-                message += "Have a nice funeral.[/red]"
+                message += "you didn't make it to Oregon.[/red]"
                 console.print(message)
 
                 # Exit the program, the player died
@@ -144,9 +143,10 @@ def main_menu():
         else:
             print(" Invalid choice. Please try again.")
 
-    console.print(
-        f"[bold blue] {player_name}, thanks for playing the Oregon Trail Adventure . . . Bye!"
-    )
+    desc = f"[green]{player_name}, [/green]"
+    desc += "\n[blue]Thanks for playing the Oregon Trail Adventure[/blue]"
+    desc += "\n[bold blue]Bye![/bold blue]"
+    console.print(desc)
 
 
 if __name__ == "__main__":

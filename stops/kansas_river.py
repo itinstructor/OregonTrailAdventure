@@ -5,11 +5,21 @@
     Description: Crossing the Kansas River
     This is a template for creating other stops along the oregon trail
 """
+
+# Windows: pip install rich
+# Linux: pip3 install rich
+# Import Console for console printing
+import stops.ascii_art
+from stops.stop import Stop
 import random
+from rich.console import Console
+# Import Panel for title displays
+from rich.panel import Panel
+# Initialize rich.console
+console = Console()
+
 # Import the common Stop class
 # enforces inheriting the get_description and interact methods
-from stops.stop import Stop
-import stops.ascii_art
 
 
 class KansasRiver(Stop):
@@ -18,18 +28,13 @@ class KansasRiver(Stop):
         self.stop_name = stop_name
 
     def get_description(self):
-        """
-        Returns a description of the river.
-
-        Returns:
-            str: A string describing the river
-        """
-        desc = stops.ascii_art.river
-        desc += self.stop_name
-        desc += "\nYou've reached a fast-flowing river, "
+        """Prints a description of the river."""
+        console.print(f"[blue]{stops.ascii_art.river}[/blue]")
+        console.print(f"[green]{self.stop_name}[/green]")
+        desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the Kansas River. "
         desc += "It's too deep to ford."
-        return desc
+        print(desc)
 
     def interact(self, player):
         """
@@ -53,7 +58,7 @@ class KansasRiver(Stop):
         This allows the player to interact with the river in the game.
         """
         # Simulated distance traveled
-        print(self.get_description())
+        self.get_description()
         menu = "What will you do?\n"
         menu += "1. Attempt to ford the river\n"
         menu += "2. Look for a ferry\n"
@@ -75,7 +80,9 @@ class KansasRiver(Stop):
                 player.add_distance(50)
 
             elif interaction == 1:
-                print(" The river is too treacherous, you fail to cross safely.")
+                desc = (" [bright_red]The river is too treacherous, ")
+                desc += (" you fail to cross safely.[/bright_red]")
+                console.print(desc)
                 player.take_damage(10)
 
         elif choice == "2":
