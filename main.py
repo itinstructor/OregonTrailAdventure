@@ -9,7 +9,8 @@
 from rich.prompt import Prompt
 import sys
 from player import Player
-from stops.kansas_river import River
+from stops.kansas_river import KansasRiver
+from stops.north_platte_river import NorthPlatteRiver
 
 # Windows: pip install rich
 # Linux: pip3 install rich
@@ -22,7 +23,8 @@ console = Console()
 
 # Define the stops along the Oregon Trail
 STOPS = [
-    River("Kansas River Crossing")
+    KansasRiver("Kansas River Crossing"),
+    NorthPlatteRiver("North Platte River")
 ]
 
 

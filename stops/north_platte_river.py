@@ -12,7 +12,7 @@ from stops.stop import Stop
 import stops.ascii_art
 
 
-class KansasRiver(Stop):
+class NorthPlatteRiver(Stop):
 
     def __init__(self, stop_name):
         self.stop_name = stop_name
@@ -27,7 +27,7 @@ class KansasRiver(Stop):
         desc = stops.ascii_art.river
         desc += self.stop_name
         desc += "\nYou've reached a fast-flowing river, "
-        desc += "known as the Kansas River. "
+        desc += "known as the North Platte River. "
         desc += "It's too deep to ford."
         return desc
 
