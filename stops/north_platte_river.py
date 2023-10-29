@@ -28,7 +28,7 @@ class NorthPlatteRiver(Stop):
         desc += self.stop_name
         desc += "\nYou've reached a fast-flowing river, "
         desc += "known as the North Platte River. "
-        desc += "It's too deep to ford."
+        desc += "It's too fast and deep to ford."
         return desc
 
     def interact(self, player):
@@ -75,14 +75,14 @@ class NorthPlatteRiver(Stop):
                 player.add_distance(50)
 
             elif interaction == 1:
-                print(" The river is too treacherous, you fail to cross safely.")
-                player.take_damage(10)
+                print(" The river is too treacherous, you fail to cross safely and drown.")
+                player.take_damage(100)
 
         elif choice == "2":
             """ Look for a ferry """
             print("You decide to look for a ferry.")
 
-            # Check if the player successfully fords the river
+            # Check if the player successfully finds a ferry
             # Example: 50% chance of success, 0 or 1
             interaction = random.randint(0, 2)
 

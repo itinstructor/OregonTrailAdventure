@@ -64,7 +64,7 @@ def main_menu():
     Enter your choice: 3
     Thanks for playing. Goodbye!
     """
-    
+
     console.print(
         Panel.fit(
             " Welcome to the Oregon Trail Adventure! ",
@@ -85,11 +85,6 @@ def main_menu():
     while player.current_stop < len(STOPS):
         # While the current_stop number is less than the
         # number of stops in the stops list
-
-        console.print(
-            "\n[bold green] -- Oregon Trail Adventure Main Menu --[/bold green]"
-        )
-
         print(" 1. Travel to the next stop")
         print(" 2. Check player status")
         print(" 9. Quit")
@@ -113,9 +108,9 @@ def main_menu():
 
             # If a player's health is less than 0, they didn't survive
             if player.health <= 0:
-                message = f"[bold red] Sorry {player.name}, "
+                message = f"[red] Sorry {player.name}, "
                 message += "you didn't make it."
-                message += "Have a nice funeral.[/bold red]"
+                message += "Have a nice funeral.[/red]"
                 console.print(message)
 
                 # Exit the program, the player died
@@ -149,9 +144,9 @@ def main_menu():
         else:
             print(" Invalid choice. Please try again.")
 
-        console.print(
-            f"[bold blue] {player_name}, thanks for playing the Oregon Trail Adventure . . . Bye!"
-        )
+    console.print(
+        f"[bold blue] {player_name}, thanks for playing the Oregon Trail Adventure . . . Bye!"
+    )
 
 
 if __name__ == "__main__":
