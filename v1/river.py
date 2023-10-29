@@ -18,7 +18,7 @@ class River(Stop):
         Returns:
             str: A string describing the river
         """
-        desc = "You've reached a fast-flowing river, "
+        desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the Wild North Platte River. "
         desc +=  "It's too deep to ford."
         return desc
@@ -50,10 +50,10 @@ class River(Stop):
         # Simulated distance traveled
         player.distance_traveled += 50
         print(self.get_description())
-        menu = "What will you do?\n"
+        menu = "What will you do?\n\n"
         menu += "1. Attempt to ford the river\n"
         menu += "2. Look for a ferry\n"
-        menu += "3. Cancel and return to the main menu"
+        menu += "3. Cancel and return to the main menu\n"
         menu += "\nEnter your choice: "
         choice = input(menu)
 
