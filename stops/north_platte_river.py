@@ -6,6 +6,15 @@
     This is a template for creating other stops along the oregon trail
 """
 import random
+# Import Console for console printing
+import stops.ascii_art
+from stops.stop import Stop
+import random
+from rich.console import Console
+# Import Panel for title displays
+from rich.panel import Panel
+# Initialize rich.console
+console = Console()
 # Import the common Stop class
 # enforces inheriting the get_description and interact methods
 from stops.stop import Stop
@@ -24,9 +33,9 @@ class NorthPlatteRiver(Stop):
         Returns:
             str: A string describing the river
         """
-        desc = stops.ascii_art.river
-        desc += self.stop_name
-        desc += "\nYou've reached a fast-flowing river, "
+        console.print(f"[bold blue]{stops.ascii_art.river}[/bold blue]")
+        console.print(f"[green]{self.stop_name}[/green]")
+        desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the North Platte River. "
         desc += "It's too fast and deep to ford."
         return desc

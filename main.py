@@ -8,6 +8,7 @@
 # Import other stop classes similarly
 from rich.prompt import Prompt
 import sys
+import stops.ascii_art
 from player import Player
 from stops.kansas_river import KansasRiver
 from stops.north_platte_river import NorthPlatteRiver
@@ -64,7 +65,7 @@ def main_menu():
     Enter your choice: 3
     Thanks for playing. Goodbye!
     """
-
+    console.print(f"[yellow]{stops.ascii_art.wagon}[/yellow]")
     console.print(
         Panel.fit(
             " Welcome to the Oregon Trail Adventure! ",
