@@ -10,6 +10,8 @@ from player import Player
 # Import other stop classes similarly
 from river import River
 
+from stop_BR import Prairie
+
 
 def main_menu():
     """
@@ -56,6 +58,9 @@ def main_menu():
     player_name = input("Enter your name: ")
     player = Player(player_name)
 
+    #Declare counter for stops
+    stop_num = 0
+
     # TODO: Anyone: Pickle and unpickle the player's state
     # to allow stop and start of play
     # Keep track of which stop they are on
@@ -74,9 +79,20 @@ def main_menu():
             # Go from one stop to the next when the player
             # leaves the stop class
             # We don't want the stop hardcoded
-            current_stop = River("Wild North Platte River")
+
+            #List to determine stops
+            stops = [River("Wild North Platte River"), Prairie("Open Prairie")]
+
+            #Counter to determine stop in list
+            
+
+            current_stop = stops[stop_num]
+
             # Pass instance of player to current_stop
             current_stop.interact(player)
+            stop_num += 1
+
+
 
         elif choice == '2':
             player.display_status()
