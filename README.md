@@ -27,22 +27,15 @@ Everything You Wanted to Know about the [Oregon Trail Game](https://www.died-of-
 To play "The Oregon Trail Adventure," follow these steps:
 
 1. Start the game and enter your name to begin your journey as a pioneer.
-
 2. Use the main menu to make choices:
    - "Travel to the next stop" to continue your journey.
    - "Check player status" to monitor your health, food, and money.
    - "Quit" to exit the game.
-
 3. During your journey, you'll encounter various stops, each with its own challenges.
-
 4. Make decisions at each stop, such as fording rivers or searching for resources.
-
 5. Manage your resources wisely, including food and money, to ensure your party's survival.
-
 6. Progress on the trail, and your choices will shape the outcome of your adventure.
-
 7. Your goal is to reach the Willamette Valley in Oregon, so plan your moves carefully.
-
 8. Navigate the trail successfully to achieve your dreams in the American West.
 
 Remember, keep an eye on your health, make good choices, and travel successfully to Oregon City. Good luck!
@@ -83,13 +76,12 @@ Let's create a text-based "Oregon Trail" game in Python with a command-line inte
    - `fort_kearney.py` (Fort Kearney, NE)
    - `chimney_rock.py` (Chimney Rock, NE)
    - `fort_laramie.py` (Fort Laramie, WY)
+   - `independence_rock.py` (Independence Rock, WY)
    - Add other locations
    - `end.py` (Willamette Valley, Oregon)
 
 2. Continue this structure for other locations, each offering different choices and consequences.
-
 3. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
-
 4. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
