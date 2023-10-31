@@ -1,20 +1,25 @@
 # La Aventura del Sendero de Oregon (The Oregon Trail Adventure)
 
+- [La Aventura del Sendero de Oregon (The Oregon Trail Adventure)](#la-aventura-del-sendero-de-oregon-the-oregon-trail-adventure)
+  - [Collaborators](#collaborators)
+  - [Story](#story)
+  - [Stops Along The Way](#stops-along-the-way)
+- [Plan of Attack for Coding](#plan-of-attack-for-coding)
+  - [Project Status Videos](#project-status-videos)
+  - [Expand the Game Ideas](#expand-the-game-ideas)
+    - [License](#license)
+
 Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
 
 A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
 
-## Collaborators:
+## Collaborators
 1. Aidan Newberry (regtoga)
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
 4. Josiah Andrews (siahdrews)
 5. Braxton Rider (SirRexOfRider)
 6. Gus Allred (itsjustmegus)
-
-## Videos
-
-- 10-28 [Video of project status and next steps](https://wnccnet-my.sharepoint.com/:v:/g/personal/loringw_wncc_edu/EYDvr5eV3KBNttroWCLrFh0BmoJVTfIkSLCX1YCgAYythA?e=ZRBtMb)
 
 ## Story
 
@@ -40,7 +45,7 @@ To play "The Oregon Trail Adventure," follow these steps:
 
 Remember, keep an eye on your health, make good choices, and travel successfully to Oregon City. Good luck!
 
-## Stops along the way
+## Stops Along The Way
 
 - Independence, Missouri
 - Kansas River Crossing
@@ -63,7 +68,7 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 
 [More about the stops along the way](https://www.philipbouchard.com/oregon-trail/real-geography.html)
 
-## Plan of Attack
+# Plan of Attack for Coding
 Let's create a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
 1. Create a folder for your project and place Python files inside it like this:
@@ -85,6 +90,10 @@ Let's create a text-based "Oregon Trail" game in Python with a command-line inte
 4. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
+
+## Project Status Videos
+
+- 10-28 [Video of project status and next steps](https://wnccnet-my.sharepoint.com/:v:/g/personal/loringw_wncc_edu/EYDvr5eV3KBNttroWCLrFh0BmoJVTfIkSLCX1YCgAYythA?e=ZRBtMb)
 
 ## Expand the Game Ideas
 
