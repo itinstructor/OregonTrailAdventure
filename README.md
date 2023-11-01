@@ -4,7 +4,7 @@
   - [Collaborators](#collaborators)
   - [Story](#story)
   - [Stops Along The Way](#stops-along-the-way)
-- [Plan of Attack for Coding](#plan-of-attack-for-coding)
+- [How to Add Stops to the Oregon Trail Adventure](#how-to-add-stops-to-the-oregon-trail-adventure)
   - [Project Status Videos](#project-status-videos)
   - [Expand the Game Ideas](#expand-the-game-ideas)
     - [License](#license)
@@ -68,13 +68,14 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 
 [More about the stops along the way](https://www.philipbouchard.com/oregon-trail/real-geography.html)
 
-# Plan of Attack for Coding
+# How to Add Stops to the Oregon Trail Adventure
 Let's create a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
 1. Create a folder for your project and place Python files inside it like this:
-
    - `main.py` (Game menu)
    - `player.py` (Player class)
+
+2. Place your stop file in the stops folder. We are following the Oregon trail stops as shown below. 
    - `start.py` (Starting location: Independence, Missouri)
    - `kansas_river.py` (Kansas River Crossing)
    - `big_blue_river.py` (Big Blue River Crossing)
@@ -82,12 +83,28 @@ Let's create a text-based "Oregon Trail" game in Python with a command-line inte
    - `chimney_rock.py` (Chimney Rock, NE)
    - `fort_laramie.py` (Fort Laramie, WY)
    - `independence_rock.py` (Independence Rock, WY)
-   - Add other locations
+   - `south_pass.py` (South Pass, WY)
+   - Green River Crossing
+   - Fort Bridger
+   - Soda Springs
+   - Fort Hall
+   - Snake River Crossing
+   - Fort Boise
+   - Blue Mountains
+   - Fort Walla Walla
+   - The Dalles
    - `end.py` (Willamette Valley, Oregon)
 
-2. Continue this structure for other locations, each offering different choices and consequences.
-3. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
-4. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
+3. Add your stop to the main.py file to the STOPS list in the following format.
+```
+# Define the stops along the Oregon Trail
+STOPS = [
+    KansasRiver("Kansas River Crossing"),
+    NorthPlatteRiver("North Platte River")
+]
+```
+1. Use the kansas_river.py stop as a guide to creating your stop.
+2. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 
