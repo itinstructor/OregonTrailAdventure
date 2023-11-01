@@ -72,6 +72,9 @@ def main_menu():
             style="bold blue",
             subtitle="by Buddy the Cougar")
     )
+    print(" Welcome to the Oregon Trail Adventure!")
+    print(" You are embarking on a journey to the west. Your goal is to reach Oregon safely.")
+    print(" You'll face various challenges and make decisions along the way.")
 
 # ------------------- GET PLAYER NAME -------------------------------------#
     # Initialize a player object with the player's name
