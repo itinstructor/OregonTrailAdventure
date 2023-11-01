@@ -6,26 +6,23 @@
     This is a template for creating other stops along the oregon trail
 """
 import random
-# Import Console for console printing
-import stops.ascii_art
+
+# Import the common Stop class
+# enforces inheriting the get_description and interact methods
 from stops.stop import Stop
+import stops.ascii_art
 import random
+# Import Console for console printing
 from rich.console import Console
 # Import Panel for title displays
 from rich.panel import Panel
 # Initialize rich.console
 console = Console()
-# Import the common Stop class
-# enforces inheriting the get_description and interact methods
-from stops.stop import Stop
-import stops.ascii_art
 
 
 class NorthPlatteRiver(Stop):
 
-    def __init__(self, stop_name):
-        self.stop_name = stop_name
-
+# --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
         """
         Returns a description of the river.
@@ -40,6 +37,7 @@ class NorthPlatteRiver(Stop):
         desc += "It's too fast and deep to ford."
         return desc
 
+# ---------------------------- INTERACT -----------------------------------#
     def interact(self, player):
         """
         Allows the player to interact with the river in a text-based game.
@@ -84,7 +82,8 @@ class NorthPlatteRiver(Stop):
                 player.add_distance(50)
 
             elif interaction == 1:
-                print(" The river is too treacherous, you fail to cross safely and drown.")
+                print(
+                    " The river is too treacherous, you fail to cross safely and drown.")
                 player.take_damage(100)
 
         elif choice == "2":

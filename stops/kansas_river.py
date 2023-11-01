@@ -6,36 +6,32 @@
     This is a template for creating other stops along the oregon trail
 """
 
-# Windows: pip install rich
-# Linux: pip3 install rich
-# Import Console for console printing
-import stops.ascii_art
+# Import the common Stop class
+# enforces inheriting the get_description and interact methods
 from stops.stop import Stop
+import stops.ascii_art
 import random
+# Import Console for console printing
 from rich.console import Console
 # Import Panel for title displays
 from rich.panel import Panel
 # Initialize rich.console
 console = Console()
 
-# Import the common Stop class
-# enforces inheriting the get_description and interact methods
-
 
 class KansasRiver(Stop):
 
-    def __init__(self, stop_name):
-        self.stop_name = stop_name
-
+# --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
         """Prints a description of the river."""
         console.print(f"[blue]{stops.ascii_art.river}[/blue]")
-        console.print(f"[green]{self.stop_name}[/green]")
+        console.print(f"[green]{self._stop_name}[/green]")
         desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the Kansas River. "
         desc += "It's too deep to ford."
         print(desc)
 
+# ------------------------ INTERACT ---------------------------------------#
     def interact(self, player):
         """
         Allows the player to interact with the river in a text-based game.

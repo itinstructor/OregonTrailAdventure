@@ -1,10 +1,18 @@
-import random
 # Import the common Stop class
 # enforces inheriting the get_description and interact methods
-from stop import Stop
+from stops.stop import Stop
+import stops.ascii_art
+import random
+# Import Console for console printing
+from rich.console import Console
+# Import Panel for title displays
+from rich.panel import Panel
+# Initialize rich.console
+console = Console()
 
 
 class Prairie(Stop):
+# --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
         """
         Returns a description of the prairie.
@@ -14,9 +22,10 @@ class Prairie(Stop):
         """
         desc = "\nYou've reached an open prairie, "
         desc += "it's covered in lush grassland and beautiful flowers. "
-        desc +=  "Off in the distance you also spot... wait... BUFFALO?"
+        desc += "Off in the distance you also spot... wait... BUFFALO?"
         return desc
 
+# ----------------------- INTERACT ----------------------------------------#
     def interact(self, player):
         """
         Allows the player to interact with the grassland and choose to hunt buffalo 
@@ -46,13 +55,12 @@ class Prairie(Stop):
         menu += "\nEnter your choice: "
         choice = input(menu)
 
-
-        #Relax
+        # Relax
         if choice == '1':
-            
+
             print("\nYou sit down, surrounded by the luscious nature arround you.")
 
-            #See if the buffalo notice you
+            # See if the buffalo notice you
 
             # Example: 50% chance of success, 0 or 1
             interaction = random.randint(0, 1)
@@ -63,7 +71,7 @@ class Prairie(Stop):
                 print("The herd of bison seem to think you're trying to eat their delicious grass. One member of the herd comes over and rams you off their turf (-15 HP)")
                 player.take_damage(15)
 
-        #Hunt for bison
+        # Hunt for bison
         elif choice == '2':
             # Hunt for a few bison
             print("You grab your hunting rifle and shoot at a few of the bison.")
@@ -75,27 +83,29 @@ class Prairie(Stop):
                 player.inventory["food"] += 200
 
             else:
-                print("You missed all of your shots and the herd ran away (you really need to work on your aim!)")
+                print(
+                    "You missed all of your shots and the herd ran away (you really need to work on your aim!)")
 
-        #K I L L  T H E M  A L L
+        # K I L L  T H E M  A L L
         elif choice == "3":
-            
-            #Let user affirm that they want to do this
-            choice = input("\nWait really? There's like 40 Bison in this herd!\nAt most, you'll only be able to carry like 3 of them with you for food!\n\nAre you sure you want to do this? [Y/N]: ").lower()
 
-            #Yes
+            # Let user affirm that they want to do this
+            choice = input(
+                "\nWait really? There's like 40 Bison in this herd!\nAt most, you'll only be able to carry like 3 of them with you for food!\n\nAre you sure you want to do this? [Y/N]: ").lower()
+
+            # Yes
             if choice == "y":
                 print("\nYou grab your hunting rifle and mow down the herd. How you were able to mow down 40 bison with a 19th century rifle is beyond me, but you somehow did.\nCongrats (You monster...)")
                 player.inventory["food"] = 200
-            #No
+            # No
             else:
                 print("That's probably for the best.")
                 self.interact(player)
 
-        #Return main menu
+        # Return main menu
         elif choice == '4':
             print("You return to the main menu.")
-            
-        #Error
+
+        # Error
         else:
             print("Invalid choice. Please try again.")
