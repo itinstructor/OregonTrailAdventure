@@ -84,6 +84,7 @@ class KansasRiver(Stop):
                 desc += (" you fail to cross safely.[/bright_red]")
                 console.print(desc)
                 player.take_damage(10)
+                player.current_stop -= 1
 
         elif choice == "2":
             """ Look for a ferry """
@@ -101,6 +102,7 @@ class KansasRiver(Stop):
             elif interaction == 1:
                 print(" You did not find a ferry.")
                 player.take_damage(10)
+                player.current_stop -= 1
 
             elif interaction == 2:
                 print(" You find a ferry, fall in the river, and die of dysentery.")
