@@ -11,6 +11,7 @@ import sys
 import stops.ascii_art
 from player import Player
 from stops.kansas_river import KansasRiver
+from stops.fort_kearney import FortKearney
 from stops.north_platte_river import NorthPlatteRiver
 
 # Windows: pip install rich
@@ -24,8 +25,9 @@ console = Console()
 
 # Define the stops along the Oregon Trail
 STOPS = [
-    KansasRiver("Kansas River Crossing"),
-    NorthPlatteRiver("North Platte River")
+    KansasRiver("Kansas River Crossing, KS"),
+    FortKearney("Fort Kearney, NE"),
+    NorthPlatteRiver("North Platte River, NE")
 ]
 
 

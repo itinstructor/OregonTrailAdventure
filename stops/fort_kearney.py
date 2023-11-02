@@ -11,7 +11,7 @@ from rich.panel import Panel
 console = Console()
 
 
-class Prairie(Stop):
+class FortKearney(Stop):
 # --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
         """
