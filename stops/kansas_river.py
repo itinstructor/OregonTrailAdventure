@@ -36,7 +36,7 @@ class KansasRiver(Stop):
 # ------------------------ INTERACT ---------------------------------------#
     def interact(self, player):
         """
-        Allows the player to interact with the river in a text-based game.
+        Allows the player to interact with the KansasRiver in a text-based game.
 
         Args:
             player (object): The player object that interacts with the river.
@@ -45,9 +45,9 @@ class KansasRiver(Stop):
             None
 
         Example Usage:
-            river = River()
+            kansas_river = River()
             player = Player()
-            river.interact(player)
+            kansas_river.interact(player)
 
         The code creates an instance of the `River` class
         and an instance of the `Player` class.

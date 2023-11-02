@@ -20,4 +20,22 @@ class Stop:
         pass
 
     def interact(self, player):
+        """
+        Args:
+            player (object): player object that interacts with the current stop.
+
+        Returns:
+            None
+
+        Example Usage:
+            river = River()
+            player = Player()
+            river.interact(player)
+
+        The code creates an instance of the `River` class
+        and an instance of the `Player` class.
+        It then calls the `interact` method on the `river` object,
+        passing the `player` object as an argument.
+        This allows the player to interact with the river in the game.
+        """
         pass
