@@ -4,7 +4,7 @@
   - [Collaborators](#collaborators)
   - [Story](#story)
   - [Stops Along The Way](#stops-along-the-way)
-- [How to Add Stops to the Oregon Trail Adventure](#how-to-add-stops-to-the-oregon-trail-adventure)
+- [Coding the Adventure](#coding-the-adventure)
   - [Project Status Videos](#project-status-videos)
   - [Expand the Game Ideas](#expand-the-game-ideas)
     - [License](#license)
@@ -68,7 +68,7 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 
 [More about the stops along the way](https://www.philipbouchard.com/oregon-trail/real-geography.html)
 
-# How to Add Stops to the Oregon Trail Adventure
+# Coding the Adventure
 Let's create a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
 
 1. Create a folder for your project and place Python files inside it like this:

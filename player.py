@@ -26,18 +26,18 @@ class Player:
         self.health = 100
         self.inventory = {'food': 100, 'money': 500}
         self.distance_traveled = 0
-        
+
         # Track which stop the player is at
         # Initialize to first stop
         self._current_stop = 0
 
 # ------------------------ CURRENT STOP -----------------------------------#
     @property
-    def current_stop(self)->int:
+    def current_stop(self) -> int:
         return self._current_stop
-    
+
     @current_stop.setter
-    def current_stop(self, stop:int):
+    def current_stop(self, stop: int):
         self._current_stop = stop
 
 # ------------------------ DISTANCE TRAVELED ------------------------------#
