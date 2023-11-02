@@ -82,6 +82,7 @@ def main_menu():
     # intact as we go from stop to stop
     player_name = Prompt.ask(" [bold green]Enter your name[/bold green]")
     player_name = player_name.title()
+    
     # Create player object, Title Case The Player's Name
     player = Player(player_name)
 
@@ -92,6 +93,7 @@ def main_menu():
         # Easily rearrange and add stops
         # Update the current stop
         current_stop = STOPS[player._current_stop]
+        
         # While the current_stop number is less than the
         # number of stops in the stops list
         print(f" 1. Travel to {current_stop.stop_name} ")
@@ -102,7 +104,6 @@ def main_menu():
 
 # -------------------------- TRAVEL TO NEXT STOP --------------------------#
         if choice == '1':
-            
             # current_stop = River(" Kansas River Crossing")
             # Pass instance of player to current_stop
             current_stop.interact(player)

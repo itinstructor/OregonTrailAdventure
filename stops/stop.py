@@ -10,7 +10,7 @@
 class Stop:
     def __init__(self, stop_name):
         self._stop_name = stop_name
-# ----------------------------- STOP NAME ---------------------------------#
+
     @property
     def stop_name(self):
         return self._stop_name

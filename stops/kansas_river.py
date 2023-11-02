@@ -97,6 +97,7 @@ class KansasRiver(Stop):
 
             elif interaction == 1:
                 print(" You did not find a ferry.")
+                # Player takes damager and repeats current stop
                 player.take_damage(10)
                 player.current_stop -= 1
 
