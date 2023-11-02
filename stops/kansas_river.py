@@ -36,26 +36,28 @@ class KansasRiver(Stop):
 # ------------------------ INTERACT ---------------------------------------#
     def interact(self, player):
         """
-        Allows the player to interact with the KansasRiver in a text-based game.
+        Allows the player to interact with the current_stop. The current_stop
+        is the current stop the player is on.
 
         Args:
-            player (object): The player object that interacts with the river.
+            player (object): The player object that interacts with
+            the current stop.
 
         Returns:
             None
 
         Example Usage:
-            kansas_river = River()
+            current_stop = CurrentStop()
             player = Player()
-            kansas_river.interact(player)
+            current_stop.interact(player)
 
-        The code creates an instance of the `River` class
+        The code creates an instance of the `CurrentStop` class
         and an instance of the `Player` class.
-        It then calls the `interact` method on the `river` object,
+        It then calls the `interact` method on the `CurrentStop` object,
         passing the `player` object as an argument.
-        This allows the player to interact with the river in the game.
+        This allows the player to interact with the current_stop in the game.
         """
-        # Rich Progress bar to simulate travel
+        # Rich Progress bar to simulate traveling through the current_stop
         with Progress() as progress:
             task1 = progress.add_task("[green]Traveling...", total=100)
 
@@ -63,7 +65,6 @@ class KansasRiver(Stop):
                 progress.update(task1, advance=0.5)
                 time.sleep(0.02)
 
-        # Simulated distance traveled
         self.get_description()
         menu = "What will you do?\n"
         menu += "1. Attempt to ford the river\n"
