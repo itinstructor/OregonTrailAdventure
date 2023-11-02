@@ -8,6 +8,8 @@
 
 # Import the common Stop class
 # enforces inheriting the get_description and interact methods
+import time
+from rich.progress import Progress
 from stops.stop import Stop
 import stops.ascii_art
 import random
@@ -21,7 +23,7 @@ console = Console()
 
 class KansasRiver(Stop):
 
-# --------------------- GET DESCRIPTION -----------------------------------#
+    # --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
         """Prints a description of the river."""
         console.print(f"[blue]{stops.ascii_art.river}[/blue]")
@@ -53,6 +55,14 @@ class KansasRiver(Stop):
         passing the `player` object as an argument.
         This allows the player to interact with the river in the game.
         """
+        # Rich Progress bar to simulate travel
+        with Progress() as progress:
+            task1 = progress.add_task("[green]Traveling...", total=100)
+
+            while not progress.finished:
+                progress.update(task1, advance=0.5)
+                time.sleep(0.02)
+
         # Simulated distance traveled
         self.get_description()
         menu = "What will you do?\n"
