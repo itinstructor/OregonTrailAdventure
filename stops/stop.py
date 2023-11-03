@@ -17,15 +17,13 @@ class Stop:
 
     #
     def get_description(self):
+        """Prints a description of the current stop."""
         pass
 
     def interact(self, player):
         """
         Args:
             player (object): player object that interacts with the current stop.
-
-        Returns:
-            None
 
         Example Usage:
             river = River()

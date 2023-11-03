@@ -25,9 +25,10 @@ class KansasRiver(Stop):
 
     # --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
-        """Prints a description of the river."""
+        """Prints a description of the current stop."""
         console.print(f"[blue]{stops.ascii_art.river}[/blue]")
         console.print(f"[green]{self._stop_name}[/green]")
+        
         desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the Kansas River. "
         desc += "It's too deep to ford."
@@ -83,6 +84,7 @@ class KansasRiver(Stop):
 
             if interaction == 0:
                 print(" You successfully ford the river.")
+                
                 # Add distance traveled
                 player.add_distance(50)
 
@@ -90,6 +92,8 @@ class KansasRiver(Stop):
                 desc = (" [bright_red]The river is too treacherous, ")
                 desc += (" you fail to cross safely.[/bright_red]")
                 console.print(desc)
+                
+                # Player takes damage and repeats current stop
                 player.take_damage(10)
                 player.current_stop -= 1
 
@@ -103,18 +107,20 @@ class KansasRiver(Stop):
 
             if interaction == 0:
                 print(" You found a ferry and crossed the river!")
-                # Add distance traveled
+                
+                # Add distance traveled to player
                 player.add_distance(50)
 
             elif interaction == 1:
                 print(" You did not find a ferry.")
-                # Player takes damager and repeats current stop
+                
+                # Player takes damage and repeats current stop
                 player.take_damage(10)
                 player.current_stop -= 1
 
             elif interaction == 2:
                 print(" You find a ferry, fall in the river, and die of dysentery.")
-                player.take_damage(100)
+                player.take_damage(200)
 
         elif choice == '3':
             print("You return to the main menu.")

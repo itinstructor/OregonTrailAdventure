@@ -22,16 +22,12 @@ console = Console()
 
 class NorthPlatteRiver(Stop):
 
-# --------------------- GET DESCRIPTION -----------------------------------#
+    # --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
-        """
-        Returns a description of the river.
-
-        Returns:
-            str: A string describing the river
-        """
+        """Prints a description of the current stop."""
         console.print(f"[bold blue]{stops.ascii_art.river}[/bold blue]")
         console.print(f"[green]{self.stop_name}[/green]")
+        
         desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the North Platte River. "
         desc += "It's too fast and deep to ford."
@@ -40,24 +36,23 @@ class NorthPlatteRiver(Stop):
 # ---------------------------- INTERACT -----------------------------------#
     def interact(self, player):
         """
-        Allows the player to interact with the river in a text-based game.
+        Allows the player to interact with the current_stop. The current_stop
+        is the current stop the player is on.
 
         Args:
-            player (object): The player object that interacts with the river.
-
-        Returns:
-            None
+            player (object): The player object that interacts with
+            the current stop.
 
         Example Usage:
-            river = River()
+            current_stop = CurrentStop()
             player = Player()
-            river.interact(player)
+            current_stop.interact(player)
 
-        The code creates an instance of the `River` class
+        The code creates an instance of the `CurrentStop` class
         and an instance of the `Player` class.
-        It then calls the `interact` method on the `river` object,
+        It then calls the `interact` method on the `CurrentStop` object,
         passing the `player` object as an argument.
-        This allows the player to interact with the river in the game.
+        This allows the player to interact with the current_stop in the game.
         """
         # Simulated distance traveled
         print(self.get_description())
@@ -78,12 +73,14 @@ class NorthPlatteRiver(Stop):
 
             if interaction == 0:
                 print(" You successfully ford the river.")
+                
                 # Add distance traveled
                 player.add_distance(50)
 
             elif interaction == 1:
                 print(
                     " The river is too treacherous, you fail to cross safely and drown.")
+                
                 player.take_damage(100)
 
         elif choice == "2":
@@ -96,18 +93,22 @@ class NorthPlatteRiver(Stop):
 
             if interaction == 0:
                 print(" You found a ferry and crossed the river!")
+                
                 # Add distance traveled
                 player.add_distance(50)
 
             elif interaction == 1:
                 print(" You did not find a ferry.")
-                # Player takes damager and repeats current stop
+                
+                # Player take damager and repeats current stop
                 player.take_damage(10)
                 player.current_stop -= 1
 
             elif interaction == 2:
-                print(" You find a ferry, fall in the river, and die of dysentery.")
-                player.take_damage(100)
+                print(" You find a ferry, fall in the river.")
+                print(" You are carried downstream and must try again.")
+                player.current_stop -= 1
+                player.take_damage(50)
 
         elif choice == '3':
             print("You return to the main menu.")

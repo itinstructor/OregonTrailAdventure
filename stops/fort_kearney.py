@@ -14,12 +14,9 @@ console = Console()
 class FortKearney(Stop):
 # --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
-        """
-        Returns a description of the prairie.
-
-        Returns:
-            str: A string describing the prairie
-        """
+        """Prints a description of the current stop."""
+        console.print(f"[green]{self.stop_name}[/green]")
+        
         desc = "\nYou've reached an open prairie, "
         desc += "it's covered in lush grassland and beautiful flowers. "
         desc += "Off in the distance you also spot... wait... BUFFALO?"
@@ -32,12 +29,6 @@ class FortKearney(Stop):
 
         Args:
             player (object): The player object that interacts with the prairie
-
-        Returns:
-            None
-
-        Raises:
-            None
 
         Example Usage:
             prarie = Prairie()
