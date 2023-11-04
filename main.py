@@ -75,7 +75,8 @@ def main_menu():
             subtitle="by Buddy the Cougar")
     )
     print(" Welcome to the Oregon Trail Adventure!")
-    print(" You are embarking on a journey to the west. Your goal is to reach Oregon safely.")
+    print(" You are embarking on a journey to the west.")
+    print(" Your goal is to reach Oregon safely.")
     print(" You'll face various challenges and make decisions along the way.")
 
 # ------------------- GET PLAYER NAME -------------------------------------#
@@ -84,9 +85,12 @@ def main_menu():
     # intact as we go from stop to stop
     player_name = Prompt.ask(" [bold green]Enter your name[/bold green]")
     player_name = player_name.title()
-    
+
     # Create player object, Title Case The Player's Name
     player = Player(player_name)
+    console.print(
+        f" [green]Welcome {player.name} to the Oregon Trail![/green]"
+    )
 
 # ------------------- MAIN MENU LOOP --------------------------------------#
     while player.current_stop < len(STOPS):
@@ -95,7 +99,7 @@ def main_menu():
         # Easily rearrange and add stops
         # Update the current stop
         current_stop = STOPS[player._current_stop]
-        
+
         # While the current_stop number is less than the
         # number of stops in the stops list
         print(f" 1. Travel to {current_stop.stop_name} ")
@@ -142,17 +146,20 @@ def main_menu():
 # -------------------------- EXIT GAME ------------------------------------#
         elif choice == '9':
             # Exit the game
-            message = f"[bold blue] Thanks for playing {player_name}. "
-            message += "Goodbye![/bold blue]"
-            console.print(message)
-            break
+            say_goodby(player_name)
+            sys.exit()
 
         else:
             print(" Invalid choice. Please try again.")
 
-    desc = f"[green]{player_name}, [/green]"
-    desc += "\n[blue]Thanks for playing the Oregon Trail Adventure[/blue]"
-    desc += "\n[bold blue]Bye![/bold blue]"
+    # if we get killed
+    # say_goodby(player_name)
+
+
+def say_goodby(player_name):
+    desc = f"[green]{player_name} [/green]"
+    desc += "\n[blue]Thank you for playing the Oregon Trail Adventure[/blue]"
+    desc += "\n[bold blue]Hasta Luego, Amigo![/bold blue]"
     console.print(desc)
 
 

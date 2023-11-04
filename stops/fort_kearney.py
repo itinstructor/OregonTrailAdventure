@@ -12,11 +12,11 @@ console = Console()
 
 
 class FortKearney(Stop):
-# --------------------- GET DESCRIPTION -----------------------------------#
+    # --------------------- GET DESCRIPTION -----------------------------------#
     def get_description(self):
         """Prints a description of the current stop."""
         console.print(f"[green]{self.stop_name}[/green]")
-        
+
         desc = "\nYou've reached an open prairie, "
         desc += "it's covered in lush grassland and beautiful flowers. "
         desc += "Off in the distance you also spot... wait... BUFFALO?"
@@ -49,7 +49,7 @@ class FortKearney(Stop):
         # Relax
         if choice == '1':
 
-            print("\nYou sit down, surrounded by the luscious nature arround you.")
+            print("\nYou sit down, surrounded by the luscious nature around you.")
 
             # See if the buffalo notice you
 
@@ -59,7 +59,11 @@ class FortKearney(Stop):
                 print("The herd of bison seem to not notice you.")
 
             elif interaction == 1:
-                print("The herd of bison seem to think you're trying to eat their delicious grass. One member of the herd comes over and rams you off their turf (-15 HP)")
+                desc = """
+The herd of bison seem to think you're trying to eat their delicious grass.
+One member of the herd comes over and rams you off their turf (-15 HP)
+"""
+                print(desc)
                 player.take_damage(15)
 
         # Hunt for bison
@@ -74,19 +78,29 @@ class FortKearney(Stop):
                 player.inventory["food"] += 200
 
             else:
-                print(
-                    "You missed all of your shots and the herd ran away (you really need to work on your aim!)")
+                desc = """
+You missed all of your shots and the herd ran away
+(you really need to work on your aim!)
+"""
 
         # K I L L  T H E M  A L L
         elif choice == "3":
 
             # Let user affirm that they want to do this
-            choice = input(
-                "\nWait really? There's like 40 Bison in this herd!\nAt most, you'll only be able to carry like 3 of them with you for food!\n\nAre you sure you want to do this? [Y/N]: ").lower()
+            choice = input("""\nWait really? 
+There's like 40 Bison in this herd!
+At most, you'll only be able to carry 3 of them with you for food!
+Are you sure you want to do this? [Y/N]: """
+                           ).lower()
 
             # Yes
             if choice == "y":
-                print("\nYou grab your hunting rifle and mow down the herd. How you were able to mow down 40 bison with a 19th century rifle is beyond me, but you somehow did.\nCongrats (You monster...)")
+                desc = """
+You grab your hunting rifle and mow down the herd.
+How you were able to mow down 40 bison with a 19th century rifle is beyond me,
+but you somehow did.
+Congrats (You monster...)
+"""
                 player.inventory["food"] = 200
             # No
             else:
