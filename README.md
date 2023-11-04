@@ -11,9 +11,10 @@
 
 Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
 
-A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
+A shared coding adventure for Intro to Computer Science Fa23.
 
 ## Collaborators
+
 1. Aidan Newberry (regtoga)
 2. Arturo Montiel (Montiel8)
 3. Yonatan Getachew (Yogetachew)
@@ -69,13 +70,14 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 [More about the stops along the way](https://www.philipbouchard.com/oregon-trail/real-geography.html)
 
 # Coding the Adventure
+
 We are crating a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview of how the program works and how to contribute to it.
 
 1. The main folder has the following files.
    - `main.py` (Game menu)
    - `player.py` (Player class)
 
-2. Place a copy of the stop.py file file in the stops folder. We are following the Oregon trail stops as shown below.
+2. Make a duplicate of the stop.py file in the stops folder. Rename it to your stop. We are following the Oregon trail stops as shown below.
 3. Rename your stop to match one of the stops
    - `start.py` (Starting location: Independence, Missouri)
    - `kansas_river.py` (Kansas River Crossing)
@@ -87,7 +89,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - `south_pass.py` (South Pass, WY)
    - `green_river_crossing.py` (Green River Crossing)
    - `fort_bridger` (Fort Bridger)
-   - Soda Springs
+   - `soda_springs`(Soda Springs)
    - Fort Hall
    - Snake River Crossing
    - Fort Boise
@@ -97,6 +99,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - `end.py` (Willamette Valley, Oregon)
 
 4. In the main.py file --> Add your stop to the STOPS list in the following format.
+
 ```
 # Define the stops along the Oregon Trail
 STOPS = [
@@ -104,7 +107,8 @@ STOPS = [
     NorthPlatteRiver("North Platte River")
 ]
 ```
-5. Finish building your stop. Take a look at the current stops to see how to code your stop.
+
+5. Finish building your stop. Take a look at the current stops to get ideas on how to code your stop.
 6. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.

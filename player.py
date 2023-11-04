@@ -24,12 +24,16 @@ class Player:
         """
         self.name = name
         self.health = 100
+
+        # TODO: Other items can be added to the inventory
         self.inventory = {'food': 100, 'money': 500}
         self.distance_traveled = 0
 
         # Track which stop the player is at
         # Initialize to first stop
         self._current_stop = 0
+
+        # TODO Other properties can be added to the player
 
 # ------------------------ CURRENT STOP -----------------------------------#
     @property
@@ -95,9 +99,6 @@ class Player:
         Args:
         amount (int): The amount of food to be consumed.
 
-        Returns:
-        None
-
         Example Usage:
         ```python
         # Create a player object
@@ -136,9 +137,6 @@ class Player:
 
         Parameters:
         amount (int): The amount of money to be spent.
-
-        Returns:
-        None
 
         Example Usage:
         ```python
