@@ -12,6 +12,7 @@ from rich.progress import Progress
 from stops.stop import Stop
 import stops.ascii_art
 import random
+import player
 # Import Console for console printing
 from rich.console import Console
 # Import Panel for title displays
