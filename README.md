@@ -20,6 +20,7 @@ A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
 4. Josiah Andrews (siahdrews)
 5. Braxton Rider (SirRexOfRider)
 6. Gus Allred (itsjustmegus)
+7. Jesse Bunnell (xGhostProjectx)
 
 ## Story
 
