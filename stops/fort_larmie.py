@@ -29,7 +29,7 @@ class FortLarmie(Stop):
 
     #
     def get_description(self):
-         """Prints a description of the current stop."""
+        """Prints a description of the current stop."""
         console.print(f"[yellow]{stops.ascii_art.fort}[/yellow]")
         console.print(f"[green]{self._fort_larmie}[/green]")
         
@@ -80,19 +80,98 @@ class FortLarmie(Stop):
             else:
                 print("Please select one of the options!")
 
-    def get_supplies(self):
-        """Allows the player to shop to get more supplies for his trip"""
+    def get_supplies(self, player):
+        """Allows the player to shop to get more supplies for their trip"""
         while True:
             menu = "Welcome to the Fort Larmie Shop!\n"
             menu = "What would you like to purchase?\n"
-            menu = "1. More Food $10\n"
+            menu = "1. More Food $5\n"
             menu = "2. Winter Clothes (Increase Max HP to 200) $700\n"
-            menu = "3. Bullets $5\n"
+            menu = "3. Bullets $1\n"
+            menu = "4. Return to Fort Larmie"
             choice = input(menu)
 
             if choice == "1":
-                
-    def go_hunting(self):
-        pass
-    def march_on(self):
-        pass
+                """Once the player selects buy food it checks to see if they have the
+                money, takes the money and adds the food."""
+                player.spend_money(5)
+                player.add_food(10)
+
+            elif choice == "2":
+                """If the player chooses the winter clothes I have no clue how to 
+                increase the max hp so as of right now I'm glad there is no way to make money."""
+                print("You can't afford that right now!")
+
+            elif choice == "3":
+                """If the player chooses to buy bullets either we can add bullets to the player
+                inventory for the whole game or I'll add it here for my mini game"""
+                player.spend_money(1)
+                self.bullets += self.bullets + 10
+            
+            elif choice == "4":
+                # Return player back to main menu
+                self.interact()
+            
+            else:
+                print("Please select one of the options!")
+
+    def go_hunting(self, player):
+        """The hunting mini game where random picks 10 random numbers 
+        1-4 are misses
+        4-6 are squirrels
+        6-8 are rabbits
+        9 are deer
+        10 are buffalo"""
+        self.bullets = 0
+        if self.bullets == 0:
+            print("You must go to the shop and buy some bullets!")
+            # Return player back to main menu
+            self.interact()
+        else:
+            possible_outcomes = list(range(1, 11))
+            unique_outcomes = random.sample(possible_outcomes, 10)
+
+            # Initialize variables to keep track of counts
+            misses = 0
+            squirrels = 0
+            rabbits = 0
+            deer = 0
+            buffalo = 0
+
+            for outcome in unique_outcomes:
+                if 1 <= outcome <= 4:
+                    print("You missed the target.")
+                    misses += 1
+                elif 4 < outcome <= 6:
+                    print("You caught a squirrel.")
+                    squirrels += 1
+                    player.add_food(1)
+                elif 6 < outcome <= 8:
+                    print("You caught a rabbit.")
+                    rabbits += 1
+                    player.add_food(2)
+                elif outcome == 9:
+                    print("You caught a deer.")
+                    deer += 1
+                    player.add_food(5)
+                elif outcome == 10:
+                    print("You caught a buffalo.")
+                    buffalo += 1
+                    player.add_food(10)
+
+            # Display the catch counts
+            print("Catch Counts:")
+            print(f"Misses: {misses}")
+            print(f"Squirrels: {squirrels}")
+            print(f"Rabbits: {rabbits}")
+            print(f"Deer: {deer}")
+            print(f"Buffalo: {buffalo}")
+        
+            # Return player back to main menu
+            self.interact()
+
+    def march_on(self, player):
+        print("You've decided to continue on with your journey to Oregon!")
+            
+        # Add distance traveled to player
+        player.add_distance(50)
