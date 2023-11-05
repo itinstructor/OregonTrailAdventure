@@ -72,6 +72,24 @@ class Player:
         """
         self.health -= damage
 
+# ------------------------ RECOVER HEALTH ------------------------------------#
+    def recover_health(self, recover):
+        """
+        Increase the player's health by a specified amount.
+
+        Parameters:
+            recover (int): The amount of health restored to the player.
+
+        Returns:
+            None: The method does not return any value.
+            It only updates the player's health attribute.
+        """
+        self.health += recover
+
+        """Cap the health at 100"""
+        if self.health > 100:
+            self.health = 100
+
 # ------------------------ HAS FOOD ---------------------------------------#
     def has_food(self, amount):
         """

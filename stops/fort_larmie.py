@@ -20,17 +20,23 @@ from rich.panel import Panel
 console = Console()
 
 class FortLarmie(Stop):
-    def __init__(self, stop_name):
-        self._stop_name = stop_name
+    def __init__(self, fort_larmie):
+        self._fort_larmie = fort_larmie
 
     @property
     def stop_name(self):
-        return self._stop_name
+        return self._fort_larmie
 
     #
     def get_description(self):
-        """Prints a description of the current stop."""
-        pass
+         """Prints a description of the current stop."""
+        console.print(f"[yellow]{stops.ascii_art.fort}[/yellow]")
+        console.print(f"[green]{self._fort_larmie}[/green]")
+        
+        desc = "\nYou've reached the mighty Fort Larmie, "
+        desc += "your first stop in the great state of Wyoming. "
+        desc += "It's time to resupply."
+        print(desc)
 
     def interact(self, player):
         """
@@ -48,4 +54,15 @@ class FortLarmie(Stop):
         passing the `player` object as an argument.
         This allows the player to interact with the river in the game.
         """
-        pass
+        self.get_description()
+        menu = "What will you do?\n"
+        menu += "1. Rest\n"
+        menu += "2. Buy supplies\n"
+        menu += "3. Go hunting\n"
+        menu += "4. Continue on your journey"
+        menu += "\nEnter your choice: "
+        choice = input(menu)
+
+        if choice == "1":
+            """Choose to rest and recover HP"""
+            
