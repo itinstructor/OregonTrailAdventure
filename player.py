@@ -26,7 +26,7 @@ class Player:
         self.health = 100
 
         # TODO: Other items can be added to the inventory
-        self.inventory = {'food': 100, 'money': 500}
+        self.inventory = {'food': 100, 'money': 500, 'bullets': 50}
         self.distance_traveled = 0
 
         # Track which stop the player is at
@@ -236,6 +236,7 @@ class Player:
         """
         print(f" --------- {self.name}'s Status --------")
         print(f"   Health: {self.health}")
-        print(f"     Food: {self.inventory['food']}")
-        print(f"    Money: {self.inventory['money']}")
+        print(f"     Food: {self.inventory.get('food')}")
+        print(f"    Money: {self.inventory.get('money')}")
+        print(f"  Bullets: {self.inventory.get('bullets')}")
         print(f" Distance: {self.distance_traveled} miles")

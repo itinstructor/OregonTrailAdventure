@@ -89,6 +89,7 @@ class FortLaramie(Stop):
     def get_supplies(self, player):
         """Allows the player to shop to get more supplies for their trip"""
         while True:
+            player.display_status()
             menu = "Welcome to the Fort Laramie Shop!\n"
             menu += "What would you like to purchase?\n"
             menu += "1. More Food $5\n"
@@ -112,7 +113,8 @@ class FortLaramie(Stop):
                 """If the player chooses to buy bullets either we can add bullets to the player
                 inventory for the whole game or I'll add it here for my mini game"""
                 player.spend_money(1)
-                self.bullets += self.bullets + 10
+                # Add bullets to the player's inventory
+                player.inventory['bullets'] += 10
 
             elif choice == "4":
                 # Return player back to main menu
