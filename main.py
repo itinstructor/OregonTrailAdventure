@@ -13,7 +13,7 @@ from player import Player
 from stops.kansas_river import KansasRiver
 from stops.fort_kearney import FortKearney
 from stops.north_platte_river import NorthPlatteRiver
-from stops.fort_larmie import FortLarmie
+from stops.fort_laramie import FortLaramie
 
 # Windows: pip install rich
 # Linux: pip3 install rich
@@ -25,11 +25,12 @@ from rich.panel import Panel
 console = Console()
 
 # Define the stops along the Oregon Trail
+# When you are testing your stop, move it to the beginning of the list
 STOPS = [
+    FortLaramie("Fort Laramie, WY"),
     KansasRiver("Kansas River Crossing, KS"),
     FortKearney("Fort Kearney, NE"),
-    NorthPlatteRiver("North Platte River, NE"),
-    FortLarmie("Fort Larmie, WY")
+    NorthPlatteRiver("North Platte River, NE")
 ]
 
 
@@ -38,12 +39,6 @@ def main_menu():
     Displays the main menu for the Oregon Trail game 
     Allows the player to choose between traveling to the next stop
     checking their player status, or quitting the game.
-
-    Inputs:
-    - None
-
-    Outputs:
-    - None
 
     Example Usage:
     Welcome to the Oregon Trail Game!

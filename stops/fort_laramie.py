@@ -1,8 +1,8 @@
 """
-    Name: Fort Larmie
-    File: fort_larmie.py
+    Name: Fort Laramie
+    File: fort_laramie.py
     Version: 1
-    Description: Stop at Fort Larmie WY to recover supplies, regain health, and hunt
+    Description: Stop at Fort Laramie WY to recover supplies, regain health, and hunt
 """
 
 # Import the common Stop class
@@ -20,21 +20,22 @@ from rich.panel import Panel
 # Initialize rich.console
 console = Console()
 
-class FortLarmie(Stop):
-    def __init__(self, fort_larmie):
-        self._fort_larmie = fort_larmie
+
+class FortLaramie(Stop):
+    def __init__(self, fort_laramie):
+        self._fort_laramie = fort_laramie
 
     @property
     def stop_name(self):
-        return self._fort_larmie
+        return self._fort_laramie
 
     #
     def get_description(self):
         """Prints a description of the current stop."""
         console.print(f"[yellow]{stops.ascii_art.fort}[/yellow]")
-        console.print(f"[green]{self._fort_larmie}[/green]")
-        
-        desc = "\nYou've reached the mighty Fort Larmie, "
+        console.print(f"[green]{self._fort_laramie}[/green]")
+
+        desc = "\nYou've reached the mighty Fort Laramie, "
         desc += "your first stop in the great state of Wyoming. "
         desc += "It's time to resupply."
         print(desc)
@@ -57,12 +58,13 @@ class FortLarmie(Stop):
         """
         while True:
             self.get_description()
+            # When concatenating a string, you must use the += operator
             menu = "What will you do?\n"
             menu += "1. Rest\n"
             menu += "2. Buy supplies\n"
             menu += "3. Go hunting\n"
-            menu += "4. Continue on your journey"
-            menu += "\nEnter your choice: "
+            menu += "4. Continue on your journey\n"
+            menu += "Enter your choice: "
             choice = input(menu)
 
             if choice == "1":
@@ -71,25 +73,28 @@ class FortLarmie(Stop):
                 player.recover_health(100)
 
             elif choice == "2":
-                self.get_supplies()
-            
+                # Anywhere you call a method that has a player parameter,
+                # you must pass a player argument 
+                # The player object is what keeps track of everything
+                self.get_supplies(player)
+
             elif choice == "3":
-                self.go_hunting()
+                self.go_hunting(player)
 
             elif choice == "4":
-                self.march_on()
+                self.march_on(player)
             else:
                 print("Please select one of the options!")
 
     def get_supplies(self, player):
         """Allows the player to shop to get more supplies for their trip"""
         while True:
-            menu = "Welcome to the Fort Larmie Shop!\n"
-            menu = "What would you like to purchase?\n"
-            menu = "1. More Food $5\n"
-            menu = "2. Winter Clothes (Increase Max HP to 200) $700\n"
-            menu = "3. Bullets $1\n"
-            menu = "4. Return to Fort Larmie"
+            menu = "Welcome to the Fort Laramie Shop!\n"
+            menu += "What would you like to purchase?\n"
+            menu += "1. More Food $5\n"
+            menu += "2. Winter Clothes (Increase Max HP to 200) $700\n"
+            menu += "3. Bullets $1\n"
+            menu += "4. Return to Fort Laramie"
             choice = input(menu)
 
             if choice == "1":
@@ -108,11 +113,11 @@ class FortLarmie(Stop):
                 inventory for the whole game or I'll add it here for my mini game"""
                 player.spend_money(1)
                 self.bullets += self.bullets + 10
-            
+
             elif choice == "4":
                 # Return player back to main menu
-                self.interact()
-            
+                self.interact(player)
+
             else:
                 print("Please select one of the options!")
 
@@ -127,7 +132,7 @@ class FortLarmie(Stop):
         if self.bullets == 0:
             print("You must go to the shop and buy some bullets!")
             # Return player back to main menu
-            self.interact()
+            self.interact(player)
         else:
             possible_outcomes = list(range(1, 11))
             unique_outcomes = random.sample(possible_outcomes, 10)
@@ -167,12 +172,12 @@ class FortLarmie(Stop):
             print(f"Rabbits: {rabbits}")
             print(f"Deer: {deer}")
             print(f"Buffalo: {buffalo}")
-        
+
             # Return player back to main menu
             self.interact()
 
     def march_on(self, player):
         print("You've decided to continue on with your journey to Oregon!")
-            
+
         # Add distance traveled to player
         player.add_distance(50)
