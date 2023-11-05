@@ -105,6 +105,35 @@ class Player:
         """
         return self.inventory.get('food', 0) >= amount
 
+# -------------------------- ADD FOOD -------------------------------------#
+    def add_food(self, amount):
+        """
+        Adds the specified amount of food to the player's inventory.
+
+        Args:
+        amount (int): The amount of food to be added to the inventory.
+
+        Example Usage:
+        ```python
+        # Create a player object
+        player = Player("John")
+
+        # Add 20 units of food to the player's inventory
+        player.add_food(20)
+
+        # Display the player's status
+        player.display_status()
+        ```
+        Output:
+        John's Status:
+        Health: 100
+        Food: 120
+        Money: 500
+        Distance Traveled: 0 miles
+        """
+        # Add food to the player's inventory
+        self.inventory['food'] += amount
+
 # ------------------------ CONSUME FOOD -----------------------------------#
     def consume_food(self, amount):
         """
@@ -141,13 +170,17 @@ class Player:
         Distance Traveled: 0 miles
         """
         if self.has_food(amount):
-            # Eat food
+            # Eat food to gain health
             self.inventory['food'] -= amount
+            self.health += 5
+            #Cap the health at 100
+            if self.health > 100:
+                self.health = 100
         else:
             # Lose health if there's not enough food
             self.health -= 10
 
-# ------------------------ SPEND MOINEY -----------------------------------#
+# ------------------------ SPEND MONEY -----------------------------------#
     def spend_money(self, amount):
         """
         Subtracts the specified amount from the player's

@@ -54,15 +54,45 @@ class FortLarmie(Stop):
         passing the `player` object as an argument.
         This allows the player to interact with the river in the game.
         """
-        self.get_description()
-        menu = "What will you do?\n"
-        menu += "1. Rest\n"
-        menu += "2. Buy supplies\n"
-        menu += "3. Go hunting\n"
-        menu += "4. Continue on your journey"
-        menu += "\nEnter your choice: "
-        choice = input(menu)
+        while True:
+            self.get_description()
+            menu = "What will you do?\n"
+            menu += "1. Rest\n"
+            menu += "2. Buy supplies\n"
+            menu += "3. Go hunting\n"
+            menu += "4. Continue on your journey"
+            menu += "\nEnter your choice: "
+            choice = input(menu)
 
-        if choice == "1":
-            """Choose to rest and recover HP"""
+            if choice == "1":
+                """Choose to rest and recover HP"""
+                print("You've laid to rest and recovered your health.")
+                player.recover_health(100)
+
+            elif choice == "2":
+                self.get_supplies()
             
+            elif choice == "3":
+                self.go_hunting()
+
+            elif choice == "4":
+                self.march_on()
+            else:
+                print("Please select one of the options!")
+
+    def get_supplies(self):
+        """Allows the player to shop to get more supplies for his trip"""
+        while True:
+            menu = "Welcome to the Fort Larmie Shop!\n"
+            menu = "What would you like to purchase?\n"
+            menu = "1. More Food $10\n"
+            menu = "2. Winter Clothes (Increase Max HP to 200) $700\n"
+            menu = "3. Bullets $5\n"
+            choice = input(menu)
+
+            if choice == "1":
+                
+    def go_hunting(self):
+        pass
+    def march_on(self):
+        pass
