@@ -22,12 +22,11 @@ class Player:
             distance_traveled (int): The distance traveled
                 by the player, set to 0 by default.
         """
-        self.name = name
-        self.health = 100
-
+        self._name = name
+        self._health = 100
+        self._distance_traveled = 0
         # TODO: Other items can be added to the inventory
-        self.inventory = {'food': 100, 'money': 500, 'bullets': 50}
-        self.distance_traveled = 0
+        self._inventory = {'food': 100, 'money': 500, 'bullets': 50}
 
         # Track which stop the player is at
         # Initialize to first stop
@@ -47,16 +46,16 @@ class Player:
 # ------------------------ DISTANCE TRAVELED ------------------------------#
     def add_distance(self, distance):
         """
-        Reduce the player's health by a specified amount.
+        Increase the player's distance traveled by a specified amount.
 
         Parameters:
-            damage (int): The amount of damage to be taken by the player.
+            distance (int): Distance the player has traveled.
 
         Returns:
             None: The method does not return any value.
             It only updates the player's health attribute.
         """
-        self.distance_traveled += distance
+        self._distance_traveled += distance
 
 # ------------------------ TAKE DAMAGE ------------------------------------#
     def take_damage(self, damage):
@@ -70,7 +69,7 @@ class Player:
             None: The method does not return any value.
             It only updates the player's health attribute.
         """
-        self.health -= damage
+        self._health -= damage
 
 # ------------------------ RECOVER HEALTH ------------------------------------#
     def recover_health(self, recover):
@@ -84,11 +83,11 @@ class Player:
             None: The method does not return any value.
             It only updates the player's health attribute.
         """
-        self.health += recover
+        self._health += recover
 
         """Cap the health at 100"""
-        if self.health > 100:
-            self.health = 100
+        if self._health > 100:
+            self._health = 100
 
 # ------------------------ HAS FOOD ---------------------------------------#
     def has_food(self, amount):
@@ -103,7 +102,7 @@ class Player:
             True if the player has enough food, False otherwise.
             Type: bool
         """
-        return self.inventory.get('food', 0) >= amount
+        return self._inventory.get('food', 0) >= amount
 
 # -------------------------- ADD FOOD -------------------------------------#
     def add_food(self, amount):
@@ -132,7 +131,7 @@ class Player:
         Distance Traveled: 0 miles
         """
         # Add food to the player's inventory
-        self.inventory['food'] += amount
+        self._inventory['food'] += amount
 
 # ------------------------ CONSUME FOOD -----------------------------------#
     def consume_food(self, amount):
@@ -171,14 +170,14 @@ class Player:
         """
         if self.has_food(amount):
             # Eat food to gain health
-            self.inventory['food'] -= amount
-            self.health += 5
-            #Cap the health at 100
-            if self.health > 100:
-                self.health = 100
+            self._inventory['food'] -= amount
+            self._health += 5
+            # Cap the health at 100
+            if self._health > 100:
+                self._health = 100
         else:
             # Lose health if there's not enough food
-            self.health -= 10
+            self._health -= 10
 
 # ------------------------ SPEND MONEY -----------------------------------#
     def spend_money(self, amount):
@@ -207,9 +206,9 @@ class Player:
         Money: 400
         Distance Traveled: 0 miles
         """
-        if self.inventory.get('money', 0) >= amount:
+        if self._inventory.get('money', 0) >= amount:
             # Subtract amount from player's money inventory
-            self.inventory['money'] -= amount
+            self._inventory['money'] -= amount
 
 # ------------------------ DISPLAY STATUS ----------------------------------#
     def display_status(self):
@@ -217,7 +216,7 @@ class Player:
         Prints the current status of the player.
 
         This method prints the player's name, health, food inventory,
-        money inventory, and distance traveled.
+        money inventory, bullet inventory and distance traveled.
 
         Example Usage:
         ```python
@@ -234,9 +233,9 @@ class Player:
         Money: 500
         Distance Traveled: 0 miles
         """
-        print(f" --------- {self.name}'s Status --------")
-        print(f"   Health: {self.health}")
-        print(f"     Food: {self.inventory.get('food')}")
-        print(f"    Money: {self.inventory.get('money')}")
-        print(f"  Bullets: {self.inventory.get('bullets')}")
-        print(f" Distance: {self.distance_traveled} miles")
+        print(f" --------- {self._name}'s Status --------")
+        print(f"   Health: {self._health}")
+        print(f"     Food: {self._inventory.get('food')}")
+        print(f"    Money: {self._inventory.get('money')}")
+        print(f"  Bullets: {self._inventory.get('bullets')}")
+        print(f" Distance: {self._distance_traveled} miles")

@@ -86,7 +86,7 @@ def main_menu():
     # Create player object, Title Case The Player's Name
     player = Player(player_name)
     console.print(
-        f" [green]Welcome {player.name} to the Oregon Trail![/green]"
+        f" [green]Welcome {player._name} to the Oregon Trail![/green]"
     )
 
 # ------------------- MAIN MENU LOOP --------------------------------------#
@@ -115,8 +115,8 @@ def main_menu():
             print(player.display_status())
 
             # If a player's health is less than 0, they didn't survive
-            if player.health <= 0:
-                message = f"[red] Sorry {player.name}, "
+            if player._health <= 0:
+                message = f"[red] Sorry {player._name}, "
                 message += "you didn't make it to Oregon.[/red]"
                 console.print(message)
 
