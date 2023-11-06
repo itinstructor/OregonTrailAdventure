@@ -76,12 +76,11 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 We are crating a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview of how the program works and how to contribute to it.
 
 1. **Pull** the current copy of the code from GitHub. You don't want to overwrite someone else's work.
-1. The main folder has the following files.
+2. The main folder has the following files.
    - `main.py` (Game menu)
    - `player.py` (Player class)
-
-2. Make a duplicate of the stop.py file in the stops folder. Rename it to your stop. We are following the Oregon trail stops as shown below.
-3. Rename your stop to match one of the stops
+3. Make a duplicate of the stop.py file in the stops folder. Rename it to your stop. We are following the Oregon trail stops as shown below.
+4. Rename your stop to match one of the stops
    - `start.py` (Starting location: Independence, Missouri)
    - `kansas_river.py` (Kansas River Crossing)
    - `big_blue_river.py` (Big Blue River Crossing)
@@ -100,8 +99,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - Fort Walla Walla
    - The Dalles
    - `end.py` (Willamette Valley, Oregon)
-
-4. In the main.py file --> Add your stop to the STOPS list in the following format.
+5. In the main.py file --> Add your stop to the STOPS list in the following format.
 
 ```
 # Define the stops along the Oregon Trail
@@ -111,9 +109,9 @@ STOPS = [
 ]
 ```
 
-5. Finish building your stop. Take a look at the current stops to get ideas on how to code your stop.
-6. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
-7. Commit early, Commit often
+6. Finish building your stop. Take a look at the current stops to get ideas on how to code your stop.
+7. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
+8. Commit early, Commit often
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 
