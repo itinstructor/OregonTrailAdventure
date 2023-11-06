@@ -9,6 +9,8 @@
   - [Expand the Game Ideas](#expand-the-game-ideas)
     - [License](#license)
 
+![](/img/welcome_to_game.png)
+
 Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
 
 A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
