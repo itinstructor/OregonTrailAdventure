@@ -25,7 +25,8 @@ from rich.panel import Panel
 console = Console()
 
 # Define the stops along the Oregon Trail
-# When you are testing your stop, move it to the beginning of the list
+# When you are testing your stop, put it at the top of the list.
+# You can move it down when you are sure it works properly.
 STOPS = [
     FortLaramie("Fort Laramie, WY"),
     KansasRiver("Kansas River Crossing, KS"),

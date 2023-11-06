@@ -100,15 +100,15 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - The Dalles
    - `end.py` (Willamette Valley, Oregon)
 5. In the main.py file --> Add your stop to the STOPS list in the following format.
-
 ```
 # Define the stops along the Oregon Trail
+# When you are testing your stop, put it at the top of the list.
+# You can move it down when you are sure it works properly.
 STOPS = [
     KansasRiver("Kansas River Crossing"),
     NorthPlatteRiver("North Platte River")
 ]
 ```
-
 6. Finish building your stop. Take a look at the current stops to get ideas on how to code your stop.
 7. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
 8. Commit early, Commit often
