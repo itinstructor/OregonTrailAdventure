@@ -75,7 +75,7 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 
 We are crating a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview of how the program works and how to contribute to it.
 
-1. **Fetch** the current copy of the code from GitHub. You don't want to overwrite someone else's work.
+1. **Pull** the current copy of the code from GitHub. You don't want to overwrite someone else's work.
 1. The main folder has the following files.
    - `main.py` (Game menu)
    - `player.py` (Player class)
