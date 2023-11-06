@@ -57,6 +57,7 @@ class FortLarmie(Stop):
         """
         while True:
             self.get_description()
+            # When concatenating a string, you must use the += operator
             menu = "What will you do?\n"
             menu += "1. Rest\n"
             menu += "2. Buy supplies\n"
@@ -71,6 +72,9 @@ class FortLarmie(Stop):
                 player.recover_health(100)
 
             elif choice == "2":
+                # Anywhere you call a method that has a player parameter,
+                # you must pass a player argument 
+                # The player object is what keeps track of everything
                 self.get_supplies(player)
             
             elif choice == "3":
@@ -84,6 +88,7 @@ class FortLarmie(Stop):
     def get_supplies(self, player):
         """Allows the player to shop to get more supplies for their trip"""
         while True:
+            player.display_status()
             menu = "Welcome to the Fort Larmie Shop!\n"
             menu = "What would you like to purchase?\n"
             menu += "1. More Food $5\n"
@@ -108,7 +113,8 @@ class FortLarmie(Stop):
                 """If the player chooses to buy bullets either we can add bullets to the player
                 inventory for the whole game or I'll add it here for my mini game"""
                 player.spend_money(1)
-                self.bullets += self.bullets + 10
+                # Add bullets to the player's inventory
+                player.inventory['bullets'] += 10    
             
             elif choice == "4":
                 # Return player back to main menu
@@ -124,8 +130,7 @@ class FortLarmie(Stop):
         6-8 are rabbits
         9 are deer
         10 are buffalo"""
-        self.bullets = 0
-        if self.bullets == 0:
+        if player.inventory['bullets'] < 10:
             print("You must go to the shop and buy some bullets!")
             # Return player back to main menu
             self.interact(player)
