@@ -82,22 +82,23 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
 3. Make a duplicate of the stop.py file in the stops folder. Rename it to your stop. We are following the Oregon trail stops as shown below.
 4. Rename your stop to match one of the stops
    - `start.py` (Starting location: Independence, Missouri)
-   - `kansas_river.py` (Kansas River Crossing)
+   - `kansas_river.py` (Kansas River Crossing) - Guillermo
    - `big_blue_river.py` (Big Blue River Crossing)
-   - `fort_kearney.py` (Fort Kearney, NE)
+   - `fort_kearney.py` (Fort Kearney, NE) - Rex
+   - `north_platte_river.py` (North Platte River Crossing, NE) - Guillermo
    - `chimney_rock.py` (Chimney Rock, NE)
-   - `fort_laramie.py` (Fort Laramie, WY)
+   - `fort_laramie.py` (Fort Laramie, WY) - Jesse
    - `independence_rock.py` (Independence Rock, WY)
    - `south_pass.py` (South Pass, WY)
-   - `green_river_crossing.py` (Green River Crossing)
-   - `fort_bridger` (Fort Bridger)
-   - `soda_springs`(Soda Springs)
-   - Fort Hall
-   - Snake River Crossing
-   - Fort Boise
-   - Blue Mountains
-   - Fort Walla Walla
-   - The Dalles
+   - `green_river_crossing.py` (Green River Crossing, WY)
+   - `fort_bridger.py` (Fort Bridger)
+   - `soda_springs.py`(Soda Springs)
+   - `fort_hall.py` (Fort Hall)
+   - `snake_river.py` (Snake River Crossing)
+   - `fort_boise.py` (Fort Boise, ID)
+   - `blue_mountains.py` (Blue Mountains)
+   - `fort_walla_walla.py` (Fort Walla Walla)
+   - `dalles.py` (The Dalles)
    - `end.py` (Willamette Valley, Oregon)
 5. In the main.py file --> Add your stop to the STOPS list in the following format.
 ```
