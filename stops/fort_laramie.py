@@ -96,6 +96,7 @@ class FortLaramie(Stop):
             menu += "2. Winter Clothes (Increase Max HP to 200) $700\n"
             menu += "3. Bullets $1\n"
             menu += "4. Return to Fort Laramie"
+            menu += "\nEnter your choice: "
             choice = input(menu)
 
             if choice == "1":
@@ -124,59 +125,71 @@ class FortLaramie(Stop):
                 print("Please select one of the options!")
 
     def go_hunting(self, player):
-        """The hunting mini game where random picks 10 random numbers 
+        """The hunting mini game where random picks 10 random numbers
         1-4 are misses
         4-6 are squirrels
         6-8 are rabbits
         9 are deer
         10 are buffalo"""
-        self.bullets = 0
-        if self.bullets == 0:
+        if player.inventory['bullets'] < 10:
             print("You must go to the shop and buy some bullets!")
-            # Return player back to main menu
+            # Return player back to the main menu
             self.interact(player)
         else:
-            possible_outcomes = list(range(1, 11))
-            unique_outcomes = random.sample(possible_outcomes, 10)
+            while True:
+                # Deduct 10 bullets from the player's inventory
+                player.inventory['bullets'] -= 10
 
-            # Initialize variables to keep track of counts
-            misses = 0
-            squirrels = 0
-            rabbits = 0
-            deer = 0
-            buffalo = 0
+                # Define the probabilities for each outcome
+                outcomes = ["Miss", "Squirrel", "Rabbit", "Deer", "Buffalo"]
+                probabilities = [0.4, 0.2, 0.2, 0.1, 0.1]
 
-            for outcome in unique_outcomes:
-                if 1 <= outcome <= 4:
-                    print("You missed the target.")
-                    misses += 1
-                elif 4 < outcome <= 6:
-                    print("You caught a squirrel.")
-                    squirrels += 1
-                    player.add_food(1)
-                elif 6 < outcome <= 8:
-                    print("You caught a rabbit.")
-                    rabbits += 1
-                    player.add_food(2)
-                elif outcome == 9:
-                    print("You caught a deer.")
-                    deer += 1
-                    player.add_food(5)
-                elif outcome == 10:
-                    print("You caught a buffalo.")
-                    buffalo += 1
-                    player.add_food(10)
+                # Simulate hunting outcomes with random.choices
+                hunting_results = random.choices(outcomes, probabilities, k=10)
 
-            # Display the catch counts
-            print("Catch Counts:")
-            print(f"Misses: {misses}")
-            print(f"Squirrels: {squirrels}")
-            print(f"Rabbits: {rabbits}")
-            print(f"Deer: {deer}")
-            print(f"Buffalo: {buffalo}")
+                # Initialize variables to keep track of counts
+                misses = hunting_results.count("Miss")
+                squirrels = hunting_results.count("Squirrel")
+                rabbits = hunting_results.count("Rabbit")
+                deer = hunting_results.count("Deer")
+                buffalo = hunting_results.count("Buffalo")
+                total_food = squirrels + (rabbits * 2) + (deer * 5) + (buffalo * 10)
 
-            # Return player back to main menu
-            self.interact()
+                for outcome in hunting_results:
+                    if outcome == "Miss":
+                        print("You missed the target.")
+                    elif outcome == "Squirrel":
+                        print("You caught a squirrel.")
+                        player.add_food(1)
+                    elif outcome == "Rabbit":
+                        print("You caught a rabbit.")
+                        player.add_food(2)
+                    elif outcome == "Deer":
+                        print("You caught a deer.")
+                        player.add_food(5)
+                    elif outcome == "Buffalo":
+                        print("You caught a buffalo.")
+                        player.add_food(10)
+
+                # Display the catch counts
+                print("Catch Counts:")
+                print(f"Misses: {misses}")
+                print(f"Squirrels: {squirrels}")
+                print(f"Rabbits: {rabbits}")
+                print(f"Deer: {deer}")
+                print(f"Buffalo: {buffalo}")
+                print(f"The total food added to your inventory is {total_food}")
+                print(f"Bullets remaining: {player.inventory['bullets']}")
+
+                # Ask the player if they want to go hunting again
+                choice = input("Do you want to go hunting again? (Y/N): ").upper()
+                if choice == 'Y':
+                    self.go_hunting(player)
+                if choice == 'N':
+                    break
+
+            # Return player back to the main menu
+            self.interact(player)
 
     def march_on(self, player):
         print("You've decided to continue on with your journey to Oregon!")
