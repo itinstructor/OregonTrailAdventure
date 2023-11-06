@@ -111,7 +111,8 @@ STOPS = [
 ```
 6. Finish building your stop. Take a look at the current stops to get ideas on how to code your stop.
 7. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
-8. Commit early, Commit often
+8. When complete or as you are working, **Pull** a current copy of the GitHub Repository. You don't want to overwrite someone else's work.
+9. **Commit early, Commit often.**
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 
