@@ -4,7 +4,7 @@
   - [Collaborators](#collaborators)
   - [Story](#story)
   - [Stops Along The Way](#stops-along-the-way)
-- [Plan of Attack for Coding](#plan-of-attack-for-coding)
+- [Coding the Adventure](#coding-the-adventure)
   - [Project Status Videos](#project-status-videos)
   - [Expand the Game Ideas](#expand-the-game-ideas)
     - [License](#license)
@@ -13,7 +13,7 @@
 
 Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
 
-A practice GitHub shared coding adventure for Intro to Computer Science Fa23.
+A shared coding adventure for Intro to Computer Science Fa23.
 
 ## Collaborators
 1. Aidan Newberry (regtoga)
@@ -71,13 +71,17 @@ Remember, keep an eye on your health, make good choices, and travel successfully
 
 [More about the stops along the way](https://www.philipbouchard.com/oregon-trail/real-geography.html)
 
-# Plan of Attack for Coding
-Let's create a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview:
+# Coding the Adventure
 
-1. Create a folder for your project and place Python files inside it like this:
+We are crating a text-based "Oregon Trail" game in Python with a command-line interface. In this game, travelers will make choices as they embark on their journey. Here's an overview of how the program works and how to contribute to it.
 
+1. **Fetch** the current copy of the code from GitHub. You don't want to overwrite someone else's work.
+1. The main folder has the following files.
    - `main.py` (Game menu)
    - `player.py` (Player class)
+
+2. Make a duplicate of the stop.py file in the stops folder. Rename it to your stop. We are following the Oregon trail stops as shown below.
+3. Rename your stop to match one of the stops
    - `start.py` (Starting location: Independence, Missouri)
    - `kansas_river.py` (Kansas River Crossing)
    - `big_blue_river.py` (Big Blue River Crossing)
@@ -85,18 +89,37 @@ Let's create a text-based "Oregon Trail" game in Python with a command-line inte
    - `chimney_rock.py` (Chimney Rock, NE)
    - `fort_laramie.py` (Fort Laramie, WY)
    - `independence_rock.py` (Independence Rock, WY)
-   - Add other locations
+   - `south_pass.py` (South Pass, WY)
+   - `green_river_crossing.py` (Green River Crossing)
+   - `fort_bridger` (Fort Bridger)
+   - `soda_springs`(Soda Springs)
+   - Fort Hall
+   - Snake River Crossing
+   - Fort Boise
+   - Blue Mountains
+   - Fort Walla Walla
+   - The Dalles
    - `end.py` (Willamette Valley, Oregon)
 
-2. Continue this structure for other locations, each offering different choices and consequences.
-3. Ensure that when a location class is entered, it should prompt the user for their next move and handle the logic for changing the current location.
-4. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
+4. In the main.py file --> Add your stop to the STOPS list in the following format.
+
+```
+# Define the stops along the Oregon Trail
+STOPS = [
+    KansasRiver("Kansas River Crossing"),
+    NorthPlatteRiver("North Platte River")
+]
+```
+
+5. Finish building your stop. Take a look at the current stops to get ideas on how to code your stop.
+6. Once you've created all location classes and connected them through the game menu in `main.py`, players can navigate through the game by making choices and progressing through the locations.
+7. Commit early, Commit often
 
 You can expand and customize the game by adding more details, challenges, and interactions at each location. Make sure to handle game over conditions and keep track of the player's progress throughout the journey.
 
 ## Project Status Videos
 
-- 10-28 [Video of project status and next steps](https://wnccnet-my.sharepoint.com/:v:/g/personal/loringw_wncc_edu/EYDvr5eV3KBNttroWCLrFh0BmoJVTfIkSLCX1YCgAYythA?e=ZRBtMb)
+- 11-02 [Video of project status and next steps](https://wnccnet-my.sharepoint.com/:v:/g/personal/loringw_wncc_edu/EaYm9UcJVFNFh6vahACxQR8B2vQDaizOkfBgDp9SWkdPiA?e=TBNC2D)
 
 ## Expand the Game Ideas
 
