@@ -12,7 +12,6 @@ from rich.progress import Progress
 from stops.stop import Stop
 import stops.ascii_art
 import random
-import player
 # Import Console for console printing
 from rich.console import Console
 # Import Panel for title displays
@@ -74,7 +73,7 @@ class FortLaramie(Stop):
 
             elif choice == "2":
                 # Anywhere you call a method that has a player parameter,
-                # you must pass a player argument 
+                # you must pass a player argument
                 # The player object is what keeps track of everything
                 self.get_supplies(player)
 
@@ -153,7 +152,8 @@ class FortLaramie(Stop):
                 rabbits = hunting_results.count("Rabbit")
                 deer = hunting_results.count("Deer")
                 buffalo = hunting_results.count("Buffalo")
-                total_food = squirrels + (rabbits * 2) + (deer * 5) + (buffalo * 10)
+                total_food = squirrels + \
+                    (rabbits * 2) + (deer * 5) + (buffalo * 10)
 
                 for outcome in hunting_results:
                     if outcome == "Miss":
@@ -178,11 +178,13 @@ class FortLaramie(Stop):
                 print(f"Rabbits: {rabbits}")
                 print(f"Deer: {deer}")
                 print(f"Buffalo: {buffalo}")
-                print(f"The total food added to your inventory is {total_food}")
+                print(
+                    f"The total food added to your inventory is {total_food}")
                 print(f"Bullets remaining: {player.inventory['bullets']}")
 
                 # Ask the player if they want to go hunting again
-                choice = input("Do you want to go hunting again? (Y/N): ").upper()
+                choice = input(
+                    "Do you want to go hunting again? (Y/N): ").upper()
                 if choice == 'Y':
                     self.go_hunting(player)
                 if choice == 'N':
