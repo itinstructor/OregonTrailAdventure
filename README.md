@@ -86,7 +86,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - `big_blue_river.py` (Big Blue River Crossing)
    - `fort_kearney.py` (Fort Kearney, NE) - Rex
    - `north_platte_river.py` (North Platte River Crossing, NE) - Guillermo
-   - `chimney_rock.py` (Chimney Rock, NE)
+   - `chimney_rock.py` (Chimney Rock, NE) - Yonatan
    - `fort_laramie.py` (Fort Laramie, WY) - Jesse
    - `independence_rock.py` (Independence Rock, WY)
    - `south_pass.py` (South Pass, WY)
