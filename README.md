@@ -81,7 +81,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - `player.py` (Player class)
 3. Make a duplicate of the stop.py file in the stops folder. Rename it to your stop. We are following the Oregon trail stops as shown below.
 4. Rename your stop to match one of the stops
-   - `start.py` (Starting location: Independence, Missouri)
+   - `start.py` (Starting location: Independence, Missouri) -
    - `kansas_river.py` (Kansas River Crossing) - Guillermo
    - `big_blue_river.py` (Big Blue River Crossing)
    - `fort_kearney.py` (Fort Kearney, NE) - Rex
