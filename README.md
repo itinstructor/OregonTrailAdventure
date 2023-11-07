@@ -92,7 +92,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - `south_pass.py` (South Pass, WY)
    - `green_river_crossing.py` (Green River Crossing, WY)
    - `fort_bridger.py` (Fort Bridger)
-   - `soda_springs.py`(Soda Springs)
+   - `soda_springs.py`(Soda Springs) - Aidan
    - `fort_hall.py` (Fort Hall)
    - `snake_river.py` (Snake River Crossing)
    - `fort_boise.py` (Fort Boise, ID)
