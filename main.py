@@ -28,10 +28,10 @@ console = Console()
 # When you are testing your stop, put it at the top of the list.
 # You can move it down when you are sure it works properly.
 STOPS = [
-    FortLaramie("Fort Laramie, WY"),
     KansasRiver("Kansas River Crossing, KS"),
     FortKearney("Fort Kearney, NE"),
-    NorthPlatteRiver("North Platte River, NE")
+    NorthPlatteRiver("North Platte River, NE"),
+    FortLaramie("Fort Laramie, WY")
 ]
 
 
