@@ -14,6 +14,7 @@ from stops.kansas_river import KansasRiver
 from stops.fort_kearney import FortKearney
 from stops.north_platte_river import NorthPlatteRiver
 from stops.fort_laramie import FortLaramie
+from stops.blue_mountains import BlueMountains
 
 # Windows: pip install rich
 # Linux: pip3 install rich
@@ -31,7 +32,8 @@ STOPS = [
     KansasRiver("Kansas River Crossing, KS"),
     FortKearney("Fort Kearney, NE"),
     NorthPlatteRiver("North Platte River, NE"),
-    FortLaramie("Fort Laramie, WY")
+    FortLaramie("Fort Laramie, WY"),
+    BlueMountains("Blue Mountains, OR")
 ]
 
 
@@ -110,6 +112,7 @@ def main_menu():
         if choice == '1':
             # current_stop = River(" Kansas River Crossing")
             # Pass instance of player to current_stop
+            current_stop.get_description()
             current_stop.interact(player)
 
             # Display status after stop

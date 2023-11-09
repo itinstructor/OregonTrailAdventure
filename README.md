@@ -96,7 +96,7 @@ We are crating a text-based "Oregon Trail" game in Python with a command-line in
    - `fort_hall.py` (Fort Hall) - Triumph
    - `snake_river.py` (Snake River Crossing)
    - `fort_boise.py` (Fort Boise, ID) - Rex
-   - `blue_mountains.py` (Blue Mountains)
+   - `blue_mountains.py` (Blue Mountains, OR) - ChatGPT
    - `fort_walla_walla.py` (Fort Walla Walla)
    - `dalles.py` (The Dalles)
    - `end.py` (Willamette Valley, Oregon)

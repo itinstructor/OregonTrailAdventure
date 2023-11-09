@@ -8,7 +8,7 @@
 """
 
 
-class Stop:
+class Stop():
     def __init__(self, stop_name):
         """
         Initializes a new instance of the Stop class with 

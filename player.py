@@ -42,6 +42,15 @@ class Player:
     @current_stop.setter
     def current_stop(self, stop: int):
         self._current_stop = stop
+    
+    @property
+    def health(self)-> int:
+        return self._health
+    
+    @health.setter
+    def health(self, health: int):
+        self._health = health
+
 
 # ------------------------ DISTANCE TRAVELED ------------------------------#
     def add_distance(self, distance):
