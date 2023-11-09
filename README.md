@@ -13,7 +13,7 @@
 
 Play the game on Replit: [Oregon Trail Adventure](https://replit.com/@itinstructor/OregonTrailAdventure)
 
-A shared coding adventure for Intro to Computer Science Fa23.
+A shared coding adventure for Intro to Computer Science Fa23. We are using ChatGPT as a coding helper.
 
 ## Collaborators
 1. Aidan Newberry (regtoga)
