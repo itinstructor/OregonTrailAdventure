@@ -25,16 +25,17 @@ class Player:
         self._name = name
         self._health = 100
         self._distance_traveled = 0
+
         # TODO: Other items can be added to the inventory
         self._inventory = {'food': 100, 'money': 500, 'bullets': 50}
 
-        # Track which stop the player is at
+        # Track the player's current stop position in the stop list
         # Initialize to first stop
         self._current_stop = 0
 
         # TODO Other properties can be added to the player
 
-# ------------------------ CURRENT STOP -----------------------------------#
+# -------------------- CURRENT STOP PROPERTY ------------------------------#
     @property
     def current_stop(self) -> int:
         return self._current_stop
@@ -42,15 +43,14 @@ class Player:
     @current_stop.setter
     def current_stop(self, stop: int):
         self._current_stop = stop
-    
+
     @property
-    def health(self)-> int:
+    def health(self) -> int:
         return self._health
-    
+
     @health.setter
     def health(self, health: int):
         self._health = health
-
 
 # ------------------------ DISTANCE TRAVELED ------------------------------#
     def add_distance(self, distance):

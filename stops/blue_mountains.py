@@ -7,7 +7,7 @@
 # enforces inheriting the get_description and interact methods
 # Import the common Stop class
 from stops.stop import Stop
-# enforces inheriting the get_description and interact methods
+
 import time
 from rich.progress import Progress
 from stops.stop import Stop
@@ -84,25 +84,33 @@ class BlueMountains(Stop):
         console.print("You are now at the Blue Mountains.")
         console.print("What would you like to do?")
         choice = console.input(
-            "[bold]1. Rest[/bold]  [bold]2. Continue[/bold]  [bold]3. Hunt[/bold]  [bold]4. Check Supplies[/bold]")
+            "[bold]'1' Rest  '2' Continue  '3' Hunt  '4' Check Supplies[/bold]"
+        )
 
         if choice == "1":
-            console.print(
-                "You decide to rest at the Blue Mountains. It's a wise choice to recover your strength.")
-            # Implement rest functionality here, e.g., restore player's health, resources, etc.
+            desc = "You decide to rest at the Blue Mountains."
+            desc += "It's a wise choice to recover your strength."
+            print(desc)
+
+            # Add health, stay at current stop
             player.health += 20
             player.current_stop -= 1
 
         elif choice == "2":
             console.print(
-                "You choose to continue your journey through the challenging Blue Mountains.")
+                "You choose to continue your journey through the challenging Blue Mountains."
+            )
             # Implement the continuation of the journey, possibly with challenges and events.
+
         elif choice == "3":
             console.print("You go hunting for food in the Blue Mountains.")
             # Implement hunting functionality here, e.g., gather resources, encounter wildlife, etc.
+
         elif choice == "4":
             console.print("You check your supplies and equipment.")
-            # Implement a check supplies functionality, show player's inventory, etc.
+            player.display_status()
+
         else:
-            console.print(
-                "Invalid choice. Please select a valid option: '1' to rest, '2' to continue, '3' to hunt, or '4' to check supplies.")
+            desc = "Invalid choice. Please select a valid option: "
+            desc += "'1' Rest  '2' Continue  '3' Hunt  '4' Check Supplies."
+            print(desc)
