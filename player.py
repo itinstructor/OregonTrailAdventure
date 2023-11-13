@@ -27,7 +27,11 @@ class Player:
         self._distance_traveled = 0
 
         # TODO: Other items can be added to the inventory
-        self._inventory = {'food': 100, 'money': 500, 'bullets': 50}
+        self._inventory = {
+            'food': 100,
+            'money': 500,
+            'bullets': 50
+        }
 
         # Track the player's current stop position in the stop list
         # Initialize to first stop
@@ -59,10 +63,6 @@ class Player:
 
         Parameters:
             distance (int): Distance the player has traveled.
-
-        Returns:
-            None: The method does not return any value.
-            It only updates the player's health attribute.
         """
         self._distance_traveled += distance
 
@@ -73,10 +73,6 @@ class Player:
 
         Parameters:
             damage (int): The amount of damage to be taken by the player.
-
-        Returns:
-            None: The method does not return any value.
-            It only updates the player's health attribute.
         """
         self._health -= damage
 
@@ -87,10 +83,6 @@ class Player:
 
         Parameters:
             recover (int): The amount of health restored to the player.
-
-        Returns:
-            None: The method does not return any value.
-            It only updates the player's health attribute.
         """
         self._health += recover
 
@@ -119,25 +111,7 @@ class Player:
         Adds the specified amount of food to the player's inventory.
 
         Args:
-        amount (int): The amount of food to be added to the inventory.
-
-        Example Usage:
-        ```python
-        # Create a player object
-        player = Player("John")
-
-        # Add 20 units of food to the player's inventory
-        player.add_food(20)
-
-        # Display the player's status
-        player.display_status()
-        ```
-        Output:
-        John's Status:
-        Health: 100
-        Food: 120
-        Money: 500
-        Distance Traveled: 0 miles
+            amount (int): The amount of food to be added to the inventory.
         """
         # Add food to the player's inventory
         self._inventory['food'] += amount
@@ -152,30 +126,7 @@ class Player:
         If there is not enough food, the player's health is reduced by 10.
 
         Args:
-        amount (int): The amount of food to be consumed.
-
-        Example Usage:
-        ```python
-        # Create a player object
-        player = Player("John")
-
-        # Check if the player has enough food
-        if player.has_food(5):
-            # Consume 5 units of food
-            player.consume_food(5)
-        else:
-            # Reduce health by 10 if there's not enough food
-            player.consume_food(0)
-
-        # Display the player's status
-        player.display_status()
-        ```
-        Output:
-        John's Status:
-        Health: 100
-        Food: 95
-        Money: 500
-        Distance Traveled: 0 miles
+            amount (int): The amount of food to be consumed.
         """
         if self.has_food(amount):
             # Eat food to gain health
@@ -195,25 +146,7 @@ class Player:
         money inventory if they have enough money.
 
         Parameters:
-        amount (int): The amount of money to be spent.
-
-        Example Usage:
-        ```python
-        # Create a player object
-        player = Player("John")
-
-        # Spend 100 units of money
-        player.spend_money(100)
-
-        # Display the player's status
-        player.display_status()
-        ```
-        Output:
-        John's Status:
-        Health: 100
-        Food: 100
-        Money: 400
-        Distance Traveled: 0 miles
+            amount (int): The amount of money to be spent.
         """
         if self._inventory.get('money', 0) >= amount:
             # Subtract amount from player's money inventory
@@ -225,22 +158,7 @@ class Player:
         Prints the current status of the player.
 
         This method prints the player's name, health, food inventory,
-        money inventory, bullet inventory and distance traveled.
-
-        Example Usage:
-        ```python
-        # Create a player object
-        player = Player("John")
-
-        # Display the player's status
-        player.display_status()
-        ```
-        Output:
-        John's Status:
-        Health: 100
-        Food: 100
-        Money: 500
-        Distance Traveled: 0 miles
+        money inventory, bullet inventory, and distance traveled.
         """
         print(f" --------- {self._name}'s Status --------")
         print(f"   Health: {self._health}")
