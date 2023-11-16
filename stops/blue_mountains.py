@@ -90,6 +90,7 @@ class BlueMountains(Stop):
         if choice == "1":
             desc = "You decide to rest at the Blue Mountains."
             desc += "It's a wise choice to recover your strength."
+            desc += "You can cross the mountains tomorow."
             print(desc)
 
             # Add health, stay at current stop
@@ -101,6 +102,9 @@ class BlueMountains(Stop):
                 "You choose to continue your journey through the challenging Blue Mountains."
             )
             # Implement the continuation of the journey, possibly with challenges and events.
+            print("You get dysentery. You don't know if you will survive the night.")
+            player.health -= 20
+            player.current_stop -= 1
 
         elif choice == "3":
             console.print("You go hunting for food in the Blue Mountains.")
