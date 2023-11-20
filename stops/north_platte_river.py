@@ -27,7 +27,7 @@ class NorthPlatteRiver(Stop):
         """Prints a description of the current stop."""
         console.print(f"[bold blue]{stops.ascii_art.river}[/bold blue]")
         console.print(f"[green]{self.stop_name}[/green]")
-        
+
         desc = "\nYou've reached a fast-flowing river, "
         desc += "known as the North Platte River. "
         desc += "It's too fast and deep to ford."
@@ -73,14 +73,15 @@ class NorthPlatteRiver(Stop):
 
             if interaction == 0:
                 print(" You successfully ford the river.")
-                
+
                 # Add distance traveled
                 player.add_distance(50)
 
             elif interaction == 1:
-                print(
-                    " The river is too treacherous, you fail to cross safely and drown.")
-                
+                desc = " The river is too treacherous, "
+                desc += "you fail to cross safely and drown."
+                print(desc)
+                # Player dies
                 player.take_damage(100)
 
         elif choice == "2":
@@ -93,20 +94,23 @@ class NorthPlatteRiver(Stop):
 
             if interaction == 0:
                 print(" You found a ferry and crossed the river!")
-                
+                print(" This was a good day!")
+
                 # Add distance traveled
                 player.add_distance(50)
 
             elif interaction == 1:
                 print(" You did not find a ferry.")
-                
-                # Player take damager and repeats current stop
+
+                # Player takes damage and repeats current stop
                 player.take_damage(10)
                 player.current_stop -= 1
 
             elif interaction == 2:
                 print(" You find a ferry, fall in the river.")
                 print(" You are carried downstream and must try again.")
+
+                # Player takes damage and repeats current stop
                 player.current_stop -= 1
                 player.take_damage(50)
 
